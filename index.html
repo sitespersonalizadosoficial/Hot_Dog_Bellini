@@ -13,208 +13,6 @@
    <style>
 
 
-/* =========================
-   BANNER
-========================= */
-
-.banner {
-    width: 100%;
-    margin: 10px auto;
-    padding: 0 8px;
-    box-sizing: border-box;
-}
-
-.banner-box {
-    position: relative;
-    width: 92%;
-    max-width: 900px;
-    height: 115px;
-    margin: 0 auto;
-
-    overflow: hidden;
-    border-radius: 12px;
-
-    background: #000;
-}
-
-
-/* =========================
-   FOTO DE FUNDO
-========================= */
-
-.banner-fundo {
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
-
-    width: 100%;
-    height: 100%;
-
-    transform: translate(-50%, -50%) scale(1.15);
-
-    object-fit: cover;
-    object-position: center;
-
-    filter: blur(12px);
-    opacity: 0.9;
-
-    z-index: 0;
-}
-
-
-/* =========================
-   FOTO PRINCIPAL
-========================= */
-
-.banner-imagem {
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
-
-    width: auto;
-    height: 100%;
-
-    transform: translate(-50%, -50%);
-
-    object-fit: contain;
-    object-position: center;
-
-    display: block;
-
-    z-index: 1;
-}
-
-
-/* =========================
-   CAMADA ESCURA
-========================= */
-
-.banner-box::after {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    background: rgba(0, 0, 0, 0.18);
-
-    z-index: 2;
-}
-
-
-/* =========================
-   TEXTO
-========================= */
-
-.banner-texto {
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
-
-    width: 90%;
-
-    text-align: center;
-
-    color: white;
-
-    z-index: 3;
-
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
-}
-
-.banner-texto h2 {
-    margin: 0 0 4px;
-
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.banner-texto p {
-    margin: 0;
-
-    font-size: 11px;
-}
-
-
-/* =========================
-   CELULAR
-========================= */
-
-@media (max-width: 700px) {
-
-    .banner {
-        margin: 8px auto;
-        padding: 0 5px;
-    }
-
-    .banner-box {
-        width: 94%;
-        height: 110px;
-        border-radius: 10px;
-    }
-
-    .banner-fundo {
-        transform: translate(-50%, -50%) scale(1.15);
-        filter: blur(10px);
-    }
-
-    .banner-imagem {
-        height: 100%;
-        width: auto;
-        max-width: 100%;
-    }
-
-    .banner-texto h2 {
-        font-size: 20px;
-    }
-
-    .banner-texto p {
-        font-size: 9px;
-    }
-}
-
-
-/* =========================
-   CELULAR PEQUENO
-========================= */
-
-@media (max-width: 450px) {
-
-    .banner {
-        margin: 6px auto;
-    }
-
-    .banner-box {
-        width: 94%;
-        height: 105px;
-        border-radius: 9px;
-    }
-
-    .banner-fundo {
-        transform: translate(-50%, -50%) scale(1.15);
-        filter: blur(9px);
-    }
-
-    .banner-imagem {
-        height: 100%;
-        width: auto;
-        max-width: 100%;
-    }
-
-    .banner-texto h2 {
-        font-size: 18px;
-    }
-
-    .banner-texto p {
-        font-size: 8px;
-    }
-}
-
-
 * {
     margin: 0;
     padding: 0;
@@ -371,38 +169,66 @@ nav a:hover {
 }
 
 .banner-box {
-    min-height: 300px;
-    border-radius: 20px;
-    overflow: hidden;
     position: relative;
-
-    background:
-        linear-gradient(
-            rgba(0,0,0,0.35),
-            rgba(0,0,0,0.35)
-        ),
-        url("imagens/banner.jpg") center/cover;
-
+    height: 300px;
+    overflow: hidden;
+    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    background: #222;
+}
+
+/* Fundo desfocado nas laterais */
+.banner-box::before {
+    content: "";
+    position: absolute;
+    inset: -30px;
+    background: url("banner.jpeg") center / cover no-repeat;
+    filter: blur(20px);
+    opacity: 0.65;
+    transform: scale(1.1);
+    z-index: 0;
+}
+
+/* Imagem principal */
+.banner-imagem {
+    position: relative;
+    z-index: 1;
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* Escurecimento leve */
+.banner-box::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.18);
+    z-index: 2;
+    pointer-events: none;
 }
 
 .banner-texto {
+    position: absolute;
+    z-index: 3;
+    width: 90%;
+    text-align: center;
     color: white;
-    padding: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 }
 
 .banner-texto h2 {
+    margin: 0 0 6px;
     font-size: 42px;
     font-weight: 900;
-    text-shadow: 2px 2px 5px #000;
 }
 
 .banner-texto p {
+    margin: 0;
     font-size: 18px;
-    margin-top: 10px;
 }
 
 /* =========================
@@ -464,7 +290,7 @@ main {
 
 .card img {
     width: 100%;
-    height: 190px;
+    height: 280px; /* Aumentado para 280px para caber a arte inteira */
     object-fit: cover;
     display: block;
 }
@@ -999,15 +825,126 @@ footer strong {
     }
 }
 
+
+/* =========================
+   BANNER NO CELULAR
+========================= */
+
+@media (max-width: 700px) {
+    .banner {
+        margin: 10px auto;
+        padding: 0 10px;
+    }
+
+    .banner-box {
+        height: 220px;
+        border-radius: 15px;
+    }
+
+    .banner-texto h2 {
+        font-size: 30px;
+    }
+
+    .banner-texto p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 450px) {
+    .banner-box {
+        height: 190px;
+    }
+
+    .banner-texto h2 {
+        font-size: 23px;
+    }
+
+    .banner-texto p {
+        font-size: 12px;
+    }
+}
+
+
+/* =========================
+   AJUSTE DE LARGURA E CELULAR
+========================= */
+html, body {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+header {
+    width: 100%;
+}
+
+.topo {
+    width: 100%;
+}
+
+main {
+    width: 100%;
+}
+
+.banner {
+    width: 100%;
+    max-width: 1200px;
+}
+
+@media (max-width: 700px) {
+    .topo {
+        width: 100%;
+        padding: 8px 10px;
+        gap: 8px;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+    }
+
+    .banner {
+        width: 100%;
+        margin: 10px 0;
+        padding: 0 10px;
+    }
+
+    .banner-box {
+        width: 100%;
+        height: 220px;
+        border-radius: 15px;
+    }
+
+    main {
+        width: 100%;
+        padding: 8px 10px 40px;
+    }
+}
+
+@media (max-width: 450px) {
+    .banner {
+        padding: 0 8px;
+    }
+
+    .banner-box {
+        height: 190px;
+        border-radius: 13px;
+    }
+
+    main {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+
 </style>
 
 </head>
 
 <body>
-
-<!-- =====================================================
-     CABEÇALHO
-===================================================== -->
 
 <header>
 
@@ -1015,20 +952,11 @@ footer strong {
 
         <div class="logo-area">
 
-            <!--
-                COLOQUE SUA LOGO AQUI:
-
-                crie a pasta "imagens"
-                e coloque sua logo com o nome:
-
-                logo.png
-            -->
-
+    
             <img
                 src="logo.jpeg"
                 alt="Logo Hot Dog Bellini"
                 class="logo"
-                onerror="this.style.display='none'"
             >
 
             <div class="nome-loja">
@@ -1102,37 +1030,31 @@ footer strong {
 
 </header>
 
-
-<!-- =====================================================
-     BANNER
-===================================================== -->
-
 <div class="banner">
+
     <div class="banner-box">
 
-        <!-- FOTO DE FUNDO -->
-        <img src="banner.jpeg" class="banner-fundo">
-
-        <!-- FOTO PRINCIPAL INTEIRA -->
-        <img src="banner.jpeg" alt="Hot Dog Bellini" class="banner-imagem">
+        <img 
+            src="banner.jpeg" 
+            alt="Hot Dog Bellini"
+            class="banner-imagem"
+        >
 
         <div class="banner-texto">
             <h2>Hot Dog Bellini</h2>
-            <p>Sabor que dá vontade de pedir de novo! ❤️</p>
+
+            <p>
+                Sabor que dá vontade de pedir de novo! ❤️
+            </p>
         </div>
 
     </div>
+
 </div>
-
-
-<!-- =====================================================
-     PRODUTOS
-===================================================== -->
 
 <main>
 
-
-<!-- ================= PROMOÇÕES ================= -->
+<!-- PROMOÇÕES -->
 
 <section
     id="promocoes"
@@ -1150,131 +1072,25 @@ footer strong {
     <div class="produtos">
 
 
-        <div
-            class="card promocao"
-            data-categoria="promocoes"
-            data-nome="Combo Bellini"
-            data-preco="29.90">
-
-            <img
-                src="imagens/combo-bellini.jpg"
-                alt="Combo Bellini"
-                onerror="this.src='imagens/sem-foto.jpg'">
-
-            <div class="card-conteudo">
-
-                <span class="etiqueta">
-                    PROMOÇÃO
-                </span>
-
-                <h3>Combo Bellini</h3>
-
-                <p class="descricao">
-                    Hot dog + batata + bebida.
-                </p>
-
-                <div class="preco">
-                    R$ 29,90
-                </div>
-
-                <button
-                    class="btn-adicionar"
-                    onclick="adicionarProduto(this)">
-
-                    Adicionar ao carrinho
-
-                </button>
-
-            </div>
-
-        </div>
+       <div class="card promocao" data-categoria="promocoes" data-nome="Batata Recheada" data-preco="19.99">
+    <img src="batatapromocao.jpeg" alt="Batata Recheada">
+    
+    <div class="card-conteudo">
+        <span class="etiqueta">PROMOÇÃO</span>
+        <h3>Batata Recheada sabor pizza </h3>
+        <p class="descricao">Batata Recheada 500 gramas, macarrão parafuso, molho branco com brócolis, queijo, bacon e azeitona.</p>
+        <div class="preco">R$ 19,99</div>
+        <button class="btn-adicionar" onclick="adicionarProduto(this)">Adicionar ao carrinho</button>
+    </div>
+</div>
 
 
-        <div
-            class="card promocao"
-            data-categoria="promocoes"
-            data-nome="Combo Casal"
-            data-preco="49.90">
-
-            <img
-                src="imagens/combo-casal.jpg"
-                alt="Combo Casal"
-                onerror="this.src='imagens/sem-foto.jpg'">
-
-            <div class="card-conteudo">
-
-                <span class="etiqueta">
-                    PROMOÇÃO
-                </span>
-
-                <h3>Combo Casal</h3>
-
-                <p class="descricao">
-                    2 hot dogs + 2 bebidas + batata.
-                </p>
-
-                <div class="preco">
-                    R$ 49,90
-                </div>
-
-                <button
-                    class="btn-adicionar"
-                    onclick="adicionarProduto(this)">
-
-                    Adicionar ao carrinho
-
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <div
-            class="card promocao"
-            data-categoria="promocoes"
-            data-nome="Churros + Bebida"
-            data-preco="15.90">
-
-            <img
-                src="imagens/churros-bebida.jpg"
-                alt="Churros com bebida"
-                onerror="this.src='imagens/sem-foto.jpg'">
-
-            <div class="card-conteudo">
-
-                <span class="etiqueta">
-                    PROMOÇÃO
-                </span>
-
-                <h3>Churros + Bebida</h3>
-
-                <p class="descricao">
-                    Churros doce acompanhado de bebida.
-                </p>
-
-                <div class="preco">
-                    R$ 15,90
-                </div>
-
-                <button
-                    class="btn-adicionar"
-                    onclick="adicionarProduto(this)">
-
-                    Adicionar ao carrinho
-
-                </button>
-
-            </div>
-
-        </div>
 
     </div>
 
 </section>
 
-
-<!-- ================= HOT DOG ================= -->
+<!-- HOT DOG -->
 
 <section
     id="hotdog"
@@ -1292,113 +1108,87 @@ footer strong {
     <div class="produtos">
 
 
-        <div
-            class="card"
-            data-categoria="hotdog"
-            data-nome="Hot Dog Tradicional"
-            data-preco="15.00">
+       <div class="card" data-categoria="hotdog" data-nome="Hot Kids" data-preco="9.99">
+    <img src="hotkids.jpg" alt="Hot Kids ">
 
-            <img
-                src="imagens/hot-dog-tradicional.jpg"
-                alt="Hot Dog Tradicional"
-                onerror="this.src='imagens/sem-foto.jpg'">
+    <div class="card-conteudo">
+        <h3>Hot Kids</h3>
+        <p class="descricao">Pão, salsicha, molhos, batata palha.</p>
+        <div class="preco">R$ 9,99</div>
 
-            <div class="card-conteudo">
+        <button class="btn-adicionar" onclick="adicionarProduto(this)">
+            Adicionar ao carrinho
+        </button>
+    </div>
+</div>
 
-                <h3>Hot Dog Tradicional</h3>
+  <div class="card" data-categoria="hotdog" data-nome="Hot Dog Simples " data-preco="14.99">
+    <img src="https://www.perdigao.com.br/assets/_images/5f79fb9c5259bf77a8b1e9750b81e3bb4e9f093b.webp" alt="Hot Dog Simples">
 
-                <p class="descricao">
-                    Hot dog tradicional da Bellini.
-                </p>
+    <div class="card-conteudo">
+        <h3>Hot Dog Simples</h3>
+        <p class="descricao">Pão, salsicha, molhos, alface, tomate e batata palha.</p>
+        <div class="preco">R$ 14,99</div>
 
-                <div class="preco">
-                    R$ 15,00
-                </div>
+        <button class="btn-adicionar" onclick="adicionarProduto(this)">
+            Adicionar ao carrinho
+        </button>
+    </div>
+</div>
 
-                <button
-                    class="btn-adicionar"
-                    onclick="adicionarProduto(this)">
-                    Adicionar ao carrinho
-                </button>
+ <div class="card" data-categoria="hotdog" data-nome="Hot Dog com purê " data-preco="21.99">
+    <img src="hotpure.jpg" alt="Hot Dog com purê">
 
-            </div>
+    <div class="card-conteudo">
+        <h3>Hot Dog com purê</h3>
+        <p class="descricao">Pão, salsicha, purê de batata, queijo, molhos, alface, tomate e batata palha.</p>
+        <div class="preco">R$ 21,99</div>
 
-        </div>
+        <button class="btn-adicionar" onclick="adicionarProduto(this)">
+            Adicionar ao carrinho
+        </button>
+    </div>
+</div>
 
+<div class="card" data-categoria="hotdog" data-nome="Hot Pizza " data-preco="24.99">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQilFPv9lyAZTIz9iT-pqwh8x3mRhK7WsQU3dZ5UgABoz1gHlRABY5E0VBi&s=10" alt="Hot Pizza">
 
-        <div
-            class="card"
-            data-categoria="hotdog"
-            data-nome="Hot Dog Especial"
-            data-preco="19.90">
+    <div class="card-conteudo">
+        <h3>Hot Pizza</h3>
+        <p class="descricao">Pão, salsicha, presunto, queijo, orégano, molhos, tomate e batata palha.</p>
+        <div class="preco">R$ 24,99</div>
 
-            <img
-                src="imagens/hot-dog-especial.jpg"
-                alt="Hot Dog Especial"
-                onerror="this.src='imagens/sem-foto.jpg'">
+        <button class="btn-adicionar" onclick="adicionarProduto(this)">
+            Adicionar ao carrinho
+        </button>
+    </div>
+</div>
 
-            <div class="card-conteudo">
+<div class="card" data-categoria="hotdog" data-nome="Hot Cebola caramelizada " data-preco="24.99">
+    <img src="caramelizada.jpg" alt="Hot Cebola caramelizada ">
 
-                <h3>Hot Dog Especial</h3>
+    <div class="card-conteudo">
+        <h3>Hot Cebola caramelizada </h3>
+        <p class="descricao">Pão, salsicha,catupiry, queijo, bacon, cebola caramelizada, molhos e batata palha.</p>
+        <div class="preco">R$ 24,99</div>
 
-                <p class="descricao">
-                    Uma opção especial e bem recheada.
-                </p>
-
-                <div class="preco">
-                    R$ 19,90
-                </div>
-
-                <button
-                    class="btn-adicionar"
-                    onclick="adicionarProduto(this)">
-                    Adicionar ao carrinho
-                </button>
-
-            </div>
-
-        </div>
+        <button class="btn-adicionar" onclick="adicionarProduto(this)">
+            Adicionar ao carrinho
+        </button>
+    </div>
+</div>
 
 
-        <div
-            class="card"
-            data-categoria="hotdog"
-            data-nome="Hot Dog Bellini"
-            data-preco="24.90">
+       
 
-            <img
-                src="imagens/hot-dog-bellini.jpg"
-                alt="Hot Dog Bellini"
-                onerror="this.src='imagens/sem-foto.jpg'">
 
-            <div class="card-conteudo">
-
-                <h3>Hot Dog Bellini</h3>
-
-                <p class="descricao">
-                    O especial da casa.
-                </p>
-
-                <div class="preco">
-                    R$ 24,90
-                </div>
-
-                <button
-                    class="btn-adicionar"
-                    onclick="adicionarProduto(this)">
-                    Adicionar ao carrinho
-                </button>
-
-            </div>
-
-        </div>
+       
 
     </div>
 
 </section>
 
-
-<!-- ================= LANCHES ================= -->
+<!-- LANCHES -->
 
 <section
     id="lanches"
@@ -1416,113 +1206,110 @@ footer strong {
     <div class="produtos">
 
 
-        <div
-            class="card"
-            data-categoria="lanches"
-            data-nome="X-Burguer"
-            data-preco="18.90">
+      <div class="card" data-categoria="lanches" data-nome="X-Burguer" data-preco="11.99">
 
-            <img
-                src="imagens/x-burguer.jpg"
-                alt="X-Burguer"
-                onerror="this.src='imagens/sem-foto.jpg'">
+    <img src="burguer.jpg" alt="X-Burguer">
 
-            <div class="card-conteudo">
+    <div class="card-conteudo">
+        <h3>X-Burguer</h3>
+        <p class="descricao">Pão, Hambúrguer, Presunto e queijo.</p>
+        <div class="preco">R$ 11,99</div>
 
-                <h3>X-Burguer</h3>
+        <button class="btn-adicionar" onclick="adicionarProduto(this)">
+            Adicionar ao carrinho
+        </button>
+    </div>
 
-                <p class="descricao">
-                    Hambúrguer com queijo.
-                </p>
+</div>
 
-                <div class="preco">
-                    R$ 18,90
-                </div>
+    <div class="card" data-categoria="lanches" data-nome="X-Salada" data-preco="14.99">
 
-                <button
-                    class="btn-adicionar"
-                    onclick="adicionarProduto(this)">
-                    Adicionar ao carrinho
-                </button>
+    <img src="salada.jpg" alt="X-Salada">
 
-            </div>
+    <div class="card-conteudo">
+        <h3>X-Salada</h3>
+        <p class="descricao">Pão, Hambúrguer, queijo, alface e Tomate.</p>
+        <div class="preco">R$ 14,99</div>
 
-        </div>
+        <button class="btn-adicionar" onclick="adicionarProduto(this)">
+            Adicionar ao carrinho
+        </button>
+    </div>
+
+</div>
+
+  <div class="card" data-categoria="lanches" data-nome="X-Egg" data-preco="24.99">
+
+    <img src="https://sachefmio.blob.core.windows.net/fotos/x-egg-73519.jpg" alt="X-Egg">
+
+    <div class="card-conteudo">
+        <h3>X-Egg</h3>
+        <p class="descricao">Pão, Hambúrguer, queijo,catupiry, ovo alface e Tomate.</p>
+        <div class="preco">R$ 24,99</div>
+        <button class="btn-adicionar" onclick="adicionarProduto(this)">
+            Adicionar ao carrinho
+        </button>
+    </div>
+
+</div>
+
+ <div class="card" data-categoria="lanches" data-nome="X-Bacon" data-preco="27.99">
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5WMyJS5O5DOLsi_m1qAxLro4knEwcRxv-FKSTz8yFr6o7FB_gBUZvM0U&s=10" alt="X-Bacon">
+
+    <div class="card-conteudo">
+        <h3>X-Bacon</h3>
+        <p class="descricao">Pão, Hambúrguer, queijo, catupiry, Bacon, alface e Tomate.</p>
+        <div class="preco">R$ 27,99</div>
+        <button class="btn-adicionar" onclick="adicionarProduto(this)">
+            Adicionar ao carrinho
+        </button>
+    </div>
+
+</div>
+
+ <div class="card" data-categoria="lanches" data-nome="X-Tudo" data-preco="29.99">
+
+    <img src="https://i0.wp.com/adegaehamburgueriarodrigues.dicavaliosa.com.br/wp-content/uploads/2022/03/X-tudo-1.png?fit=250%2C250&ssl=1" alt="X-Tudo">
+
+    <div class="card-conteudo">
+        <h3>X-Tudo</h3>
+        <p class="descricao">Pão, Hambúrguer, Frango Empanado, Presunto, queijo, Salsicha, catupiry, Cheddar, alface e Tomate.</p>
+        <div class="preco">R$ 29,99</div>
+        <button class="btn-adicionar" onclick="adicionarProduto(this)">
+            Adicionar ao carrinho
+        </button>
+    </div>
+
+</div>
+
+<div class="card" data-categoria="lanches" data-nome="X-Frango" data-preco="29.99">
+
+    <img src="https://www.paollarestaurante.com.br/uploads/images/2019/08/x-frango-1564805822.jpg" alt="X-Frango">
+
+    <div class="card-conteudo">
+        <h3>X-Frango</h3>
+        <p class="descricao">Pão, Hambúrguer, Frango desfiado, milho, catupiry, alface e Tomate.</p>
+        <div class="preco">R$ 29,99</div>
+        <button class="btn-adicionar" onclick="adicionarProduto(this)">
+            Adicionar ao carrinho
+        </button>
+    </div>
+
+</div>
 
 
-        <div
-            class="card"
-            data-categoria="lanches"
-            data-nome="X-Salada"
-            data-preco="20.90">
 
-            <img
-                src="imagens/x-salada.jpg"
-                alt="X-Salada"
-                onerror="this.src='imagens/sem-foto.jpg'">
-
-            <div class="card-conteudo">
-
-                <h3>X-Salada</h3>
-
-                <p class="descricao">
-                    Lanche com hambúrguer, queijo e salada.
-                </p>
-
-                <div class="preco">
-                    R$ 20,90
-                </div>
-
-                <button
-                    class="btn-adicionar"
-                    onclick="adicionarProduto(this)">
-                    Adicionar ao carrinho
-                </button>
-
-            </div>
-
-        </div>
+    
 
 
-        <div
-            class="card"
-            data-categoria="lanches"
-            data-nome="X-Bacon"
-            data-preco="23.90">
-
-            <img
-                src="imagens/x-bacon.jpg"
-                alt="X-Bacon"
-                onerror="this.src='imagens/sem-foto.jpg'">
-
-            <div class="card-conteudo">
-
-                <h3>X-Bacon</h3>
-
-                <p class="descricao">
-                    Hambúrguer com queijo e bacon.
-                </p>
-
-                <div class="preco">
-                    R$ 23,90
-                </div>
-
-                <button
-                    class="btn-adicionar"
-                    onclick="adicionarProduto(this)">
-                    Adicionar ao carrinho
-                </button>
-
-            </div>
-
-        </div>
+      
 
     </div>
 
 </section>
 
-
-<!-- ================= MACARRÃO ================= -->
+<!-- MACARRÃO -->
 
 <section
     id="macarrao"
@@ -1546,7 +1333,7 @@ footer strong {
             data-preco="25.00">
 
             <img
-                src="imagens/macarrao.jpg"
+                src="https://macarraodoleo.com.br/wp-content/uploads/2026/01/do-seu-jeito-324x324.png"
                 alt="Macarrão"
                 onerror="this.src='imagens/sem-foto.jpg'">
 
@@ -1578,8 +1365,7 @@ footer strong {
 
 </section>
 
-
-<!-- ================= BATATA ================= -->
+<!-- BATATA -->
 
 <section
     id="batata"
@@ -1603,7 +1389,7 @@ footer strong {
             data-preco="22.00">
 
             <img
-                src="imagens/batata-recheada.jpg"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvaL3gzJJB4DF4RImIv9CWTNP4135gdT4tJIiqyFFiWJdVemGHJux04p_N&s=10"
                 alt="Batata recheada"
                 onerror="this.src='imagens/sem-foto.jpg'">
 
@@ -1635,8 +1421,7 @@ footer strong {
 
 </section>
 
-
-<!-- ================= CHURROS ================= -->
+<!-- CHURROS -->
 
 <section
     id="churros"
@@ -1663,7 +1448,7 @@ footer strong {
             data-preco="15.00">
 
             <img
-                src="imagens/churros-gourmet.jpg"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUh_eToEfHzTpEfCCdzQ4HVt3HYvExbj69Qyx0z0ecwbpL1amaxB4g4InL&s=10"
                 alt="Churros Gourmet"
                 onerror="this.src='imagens/sem-foto.jpg'">
 
@@ -1701,7 +1486,7 @@ footer strong {
             data-preco="10.00">
 
             <img
-                src="imagens/churros-doce.jpg"
+                src="https://panutti.com.br/resize/imagecache//b3b9b0410a8b742ad1d7d3d45718f51f.jpg"
                 alt="Churros doce"
                 onerror="this.src='imagens/sem-foto.jpg'">
 
@@ -1739,7 +1524,7 @@ footer strong {
             data-preco="12.00">
 
             <img
-                src="imagens/churros-salgado.jpg"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4ajVWJ7R94KZARNQbzAkKz16flEBLykxX0hDhgwJ5woTN6lu_g9Z8Wc0&s=10"
                 alt="Churros salgado"
                 onerror="this.src='imagens/sem-foto.jpg'">
 
@@ -1771,8 +1556,7 @@ footer strong {
 
 </section>
 
-
-<!-- ================= BEBIDAS ================= -->
+<!-- BEBIDAS -->
 
 <section
     id="bebidas"
@@ -1896,11 +1680,6 @@ footer strong {
 </section>
 
 </main>
-
-
-<!-- =====================================================
-     CARRINHO
-===================================================== -->
 
 <div
     class="fundo-carrinho"
@@ -2102,11 +1881,6 @@ footer strong {
     </div>
 
 </div>
-
-
-<!-- =====================================================
-     MODAL PERSONALIZAÇÃO
-===================================================== -->
 
 <div
     class="fundo-modal"
@@ -2546,11 +2320,6 @@ footer strong {
     </div>
 
 </div>
-
-
-<!-- =====================================================
-     RODAPÉ
-===================================================== -->
 
 <footer>
 
