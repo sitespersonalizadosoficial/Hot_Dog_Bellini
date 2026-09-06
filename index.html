@@ -1020,8 +1020,10 @@
 
             <!-- MENU SUPERIOR -->
             <nav>
-                <a href="#" onclick="mostrarCategoria('promocoes'); return false;">🔥 Promoções</a>
                 <a href="#" onclick="mostrarCategoria('hotdog'); return false;">🌭 Hot Dog</a>
+                <a href="#" onclick="mostrarCategoria('promocoes'); return false;">🔥 Promoções</a>
+                <a href="#" onclick="mostrarCategoria('hotdog30cm'); return false;">📏 Hot Dog 30 cm</a>
+                <a href="#" onclick="mostrarCategoria('hotdogdoce'); return false;">🍩 Hot Dog Doce</a>
                 <a href="#" onclick="mostrarCategoria('lanches'); return false;">🍔 Lanches</a>
                 <a href="#" onclick="mostrarCategoria('macarrao'); return false;">🍝 Macarrão</a>
                 <a href="#" onclick="mostrarCategoria('batata'); return false;">🥔 Batata</a>
@@ -1045,27 +1047,6 @@
     </div>
 
     <main>
-        <!-- PROMOÇÕES -->
-        <section id="promocoes" class="secao">
-            <div class="titulo-secao">
-                <h2>🔥 Promoções</h2>
-                <p>Confira nossas ofertas especiais</p>
-            </div>
-
-            <div class="produtos">
-                <div class="card promocao" data-categoria="promocoes" data-nome="Batata Recheada" data-preco="19.99">
-                    <img src="batatarecheada.jpeg" alt="Batata Recheada">
-                    <div class="card-conteudo">
-                        <span class="etiqueta">PROMOÇÃO</span>
-                        <h3>Batata Recheada aproximadamente 500 gramas sabor pizza</h3>
-                        <p class="descricao">Batata Recheada 500 gramas, macarrão parafuso, molho branco com brócolis, queijo, bacon e azeitona.</p>
-                        <div class="preco">R$ 19,99</div>
-                        <button class="btn-adicionar" onclick="adicionarProduto(this)">Adicionar ao carrinho</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- HOT DOG -->
         <section id="hotdog" class="secao">
             <div class="titulo-secao">
@@ -1120,6 +1101,118 @@
                         <h3>Hot Cebola caramelizada</h3>
                         <p class="descricao">Pão, salsicha, catupiry, queijo, bacon, cebola caramelizada, molhos e batata palha.</p>
                         <div class="preco">R$ 24,99</div>
+                        <button class="btn-adicionar" onclick="adicionarProduto(this)">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROMOÇÕES -->
+        <section id="promocoes" class="secao">
+            <div class="titulo-secao">
+                <h2>🔥 Promoções</h2>
+                <p>Confira nossas ofertas especiais</p>
+            </div>
+
+            <div class="produtos">
+                <div class="card promocao" data-categoria="promocoes" data-nome="Batata Recheada" data-preco="19.99">
+                    <img src="batatarecheada.jpeg" alt="Batata Recheada">
+                    <div class="card-conteudo">
+                        <span class="etiqueta">PROMOÇÃO</span>
+                        <h3>Batata Recheada aproximadamente 500 gramas sabor pizza</h3>
+                        <p class="descricao">Batata Recheada 500 gramas, macarrão parafuso, molho branco com brócolis, queijo, bacon e azeitona.</p>
+                        <div class="preco">R$ 19,99</div>
+                        <button class="btn-adicionar" onclick="adicionarProduto(this)">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOT DOG 30 CM -->
+        <section id="hotdog30cm" class="secao">
+            <div class="titulo-secao">
+                <h2>📏 Hot Dog 30 cm</h2>
+                <p>Para quem tem fome de verdade!</p>
+            </div>
+
+            <div class="produtos">
+                <div class="card" data-categoria="hotdog30cm" data-nome="Hot Dog 30 cm Simples" data-preco="29.99">
+                    <img src="https://www.perdigao.com.br/assets/_images/5f79fb9c5259bf77a8b1e9750b81e3bb4e9f093b.webp" alt="Hot Dog 30 cm Simples">
+                    <div class="card-conteudo">
+                        <h3>Hot Dog 30 cm Simples</h3>
+                        <p class="descricao">Pão de 30 cm,salsicha, molhos, alface, tomate e batata palha.</p>
+                        <div class="preco">R$ 29,99</div>
+                        <button class="btn-adicionar" onclick="adicionarProduto(this)">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+
+                <div class="card" data-categoria="hotdog30cm" data-nome="Hot Dog 30 cm com purê" data-preco="34.99">
+                    <img src="hotpure.jpg" alt="Hot Dog 30 cm com purê">
+                    <div class="card-conteudo">
+                        <h3>Hot Dog 30 cm com purê</h3>
+                        <p class="descricao">Pão de 30 cm, salsicha, purê de batata, queijo, molhos, alface, tomate e batata palha.</p>
+                        <div class="preco">R$ 34,99</div>
+                        <button class="btn-adicionar" onclick="adicionarProduto(this)">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+
+                 <div class="card" data-categoria="hotdog30cm" data-nome="Hot Dog 30 cm sabor pizza" data-preco="39.99">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQilFPv9lyAZTIz9iT-pqwh8x3mRhK7WsQU3dZ5UgABoz1gHlRABY5E0VBi&s=10" alt="Hot Dog 30 cm com cebola caramelizada">
+                    <div class="card-conteudo">
+                        <h3>Hot Dog 30 cm com cebola caramelizada</h3>
+                        <p class="descricao">Pão de 30 cm, salsicha, catupiry, Bacon, queijo, molhos, Cebola caramelizada e batata palha.</p>
+                        <div class="preco">R$ 39,99</div>
+                        <button class="btn-adicionar" onclick="adicionarProduto(this)">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+
+                 <div class="card" data-categoria="hotdog30cm" data-nome="Hot Dog 30 cm com cebola caramelizada" data-preco="34.99">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKOCHVM6MGpt-sIiQYlLdFG4jf_aLmnDhX_iX9Y2WEJ_Yx8gMBgLI2iXQ&s=10" alt="Hot Dog 30 cm sabor pizza">
+                    <div class="card-conteudo">
+                        <h3>Hot Dog 30 cm sabor pizza</h3>
+                        <p class="descricao">Pão de 30 cm, salsicha, Presunto, queijo, molhos, Orégano e batata palha.</p>
+                        <div class="preco">R$ 34,99</div>
+                        <button class="btn-adicionar" onclick="adicionarProduto(this)">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- HOT DOG DOCE -->
+        <section id="hotdogdoce" class="secao">
+            <div class="titulo-secao">
+                <h2>🍩 Hot Dog Doce</h2>
+                <p>A combinação perfeita de sabor e doçura</p>
+            </div>
+
+            <div class="produtos">
+                <div class="card" data-categoria="hotdogdoce" data-nome="Hot Dog Brigadeiro" data-preco="19.99">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgK2jVSUVJWLjJ2xAVeBUiI70qvcoCQx0IB26oxhLTeSnlpVXzI2aNO-Ux&s=10" alt="Hot Dog Brigadeiro" onerror="this.src='imagens/sem-foto.jpg'">
+                    <div class="card-conteudo">
+                        <h3>Hot Dog Brigadeiro</h3>
+                        <p class="descricao">Pão, recheio de Brigadeiro e granulado.</p>
+                        <div class="preco">R$ 19,99</div>
+                        <button class="btn-adicionar" onclick="adicionarProduto(this)">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+
+                <div class="card" data-categoria="hotdogdoce" data-nome="Hot Dog Doce de Ninho" data-preco="24.99">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_potmn_dSMJ68fxA7wk5_HE5b2qwcnb6W7Vs9jT9IyZjv3jkw3ezrRSo&s=10" alt="Hot Dog Doce de Ninho" onerror="this.src='imagens/sem-foto.jpg'">
+                    <div class="card-conteudo">
+                        <h3>Hot Dog Doce de Ninho</h3>
+                        <p class="descricao">Pão, doce de Ninho e Confete.</p>
+                        <div class="preco">R$ 24,99</div>
+                        <button class="btn-adicionar" onclick="adicionarProduto(this)">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+
+                 <div class="card" data-categoria="hotdogdoce" data-nome="Hot Dog Doce de Nutella" data-preco="29.99">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe6k5h-fGFVWCIjJ4PTpLEduTVjZX7moj3eI6xmJc0MnQIfb2t0rk8tsA&s=10" alt="Hot Dog Doce de Nutella" onerror="this.src='imagens/sem-foto.jpg'">
+                    <div class="card-conteudo">
+                        <h3>Hot Dog Doce de Nutella</h3>
+                        <p class="descricao">Pão, Nutella e Confete.</p>
+                        <div class="preco">R$ 29,99</div>
                         <button class="btn-adicionar" onclick="adicionarProduto(this)">Adicionar ao carrinho</button>
                     </div>
                 </div>
@@ -1489,7 +1582,6 @@
     </div>
 
     <footer>
-        
         <div class="rodape-conteudo">
             <p><strong>Hot Dog Bellini</strong> — Simone Bellini</p>
             <p>📍 <strong>Endereço:</strong> Rua Durval Cardoso da Silveira, n°901 - Jardim marina Viradouro-Sp</p>
@@ -1961,122 +2053,122 @@
            FINALIZAR PEDIDO
         ========================================== */
         function finalizarPedido() {
-    if (carrinho.length === 0) {
-        alert("Seu carrinho está vazio.");
-        return;
-    }
+            if (carrinho.length === 0) {
+                alert("Seu carrinho está vazio.");
+                return;
+            }
 
-    const campoNome = document.getElementById("nomeCliente");
-    const nome = campoNome ? campoNome.value.trim() : "";
-    if (!nome) {
-        alert("Digite o nome do cliente.");
-        return;
-    }
+            const campoNome = document.getElementById("nomeCliente");
+            const nome = campoNome ? campoNome.value.trim() : "";
+            if (!nome) {
+                alert("Digite o nome do cliente.");
+                return;
+            }
 
-    const tipoSelecionado = document.querySelector('input[name="tipoPedido"]:checked');
-    if (!tipoSelecionado) {
-        alert("Escolha se o pedido será para retirada ou entrega.");
-        return;
-    }
-    const tipo = tipoSelecionado.value;
+            const tipoSelecionado = document.querySelector('input[name="tipoPedido"]:checked');
+            if (!tipoSelecionado) {
+                alert("Escolha se o pedido será para retirada ou entrega.");
+                return;
+            }
+            const tipo = tipoSelecionado.value;
 
-    const campoEndereco = document.getElementById("endereco");
-    const endereco = campoEndereco ? campoEndereco.value.trim() : "";
-    if (tipo === "entrega" && !endereco) {
-        alert("Digite o endereço para entrega.");
-        return;
-    }
+            const campoEndereco = document.getElementById("endereco");
+            const endereco = campoEndereco ? campoEndereco.value.trim() : "";
+            if (tipo === "entrega" && !endereco) {
+                alert("Digite o endereço para entrega.");
+                return;
+            }
 
-    const campoPagamento = document.getElementById("pagamento");
-    const pagamento = campoPagamento ? campoPagamento.value : "";
-    if (!pagamento) {
-        alert("Escolha a forma de pagamento.");
-        return;
-    }
+            const campoPagamento = document.getElementById("pagamento");
+            const pagamento = campoPagamento ? campoPagamento.value : "";
+            if (!pagamento) {
+                alert("Escolha a forma de pagamento.");
+                return;
+            }
 
-    const campoPrecisaTroco = document.getElementById("precisaTroco");
-    const precisaTroco = campoPrecisaTroco ? campoPrecisaTroco.value : "Nao";
+            const campoPrecisaTroco = document.getElementById("precisaTroco");
+            const precisaTroco = campoPrecisaTroco ? campoPrecisaTroco.value : "Nao";
 
-    const campoValorTroco = document.getElementById("valorTroco");
-    const valorTroco = campoValorTroco ? parseFloat(campoValorTroco.value) || 0 : 0;
+            const campoValorTroco = document.getElementById("valorTroco");
+            const valorTroco = campoValorTroco ? parseFloat(campoValorTroco.value) || 0 : 0;
 
-    const campoObservacao = document.getElementById("observacao");
-    const observacao = campoObservacao ? campoObservacao.value.trim() : "";
+            const campoObservacao = document.getElementById("observacao");
+            const observacao = campoObservacao ? campoObservacao.value.trim() : "";
 
-    let subtotal = 0;
-    carrinho.forEach(function (item) {
-        subtotal += item.preco * item.quantidade;
-    });
+            let subtotal = 0;
+            carrinho.forEach(function (item) {
+                subtotal += item.preco * item.quantidade;
+            });
 
-    const taxa = tipo === "entrega" ? 5 : 0;
-    const total = subtotal + taxa;
+            const taxa = tipo === "entrega" ? 5 : 0;
+            const total = subtotal + taxa;
 
-    if (pagamento === "Dinheiro" && precisaTroco === "Sim") {
-        if (valorTroco <= 0) {
-            alert("Informe o valor para o qual precisa de troco.");
-            return;
+            if (pagamento === "Dinheiro" && precisaTroco === "Sim") {
+                if (valorTroco <= 0) {
+                    alert("Informe o valor para o qual precisa de troco.");
+                    return;
+                }
+                if (valorTroco < total) {
+                    alert("O valor para o troco não pode ser menor que o total do pedido.");
+                    return;
+                }
+            }
+
+            let mensagem = "🌭 *HOT DOG BELLINI* 🌭\n";
+            mensagem += "Simone Bellini\n\n";
+            mensagem += "*NOVO PEDIDO*\n\n";
+            mensagem += "👤 Cliente: " + nome + "\n";
+            mensagem += "📦 Tipo: " + (tipo === "entrega" ? "Entrega" : "Retirada") + "\n";
+
+            if (tipo === "entrega") {
+                mensagem += "📍 Endereço: " + endereco + "\n";
+                mensagem += "🚚 Taxa de entrega: R$ 5,00\n";
+                mensagem += "⏱️ *Prazo estimado:* 30 min a 1 hora (pode variar em horários de pico)\n";
+            }
+
+            mensagem += "💳 Pagamento: " + pagamento + "\n";
+
+            if (pagamento === "Dinheiro") {
+                mensagem += "💵 Precisa de troco: " + (precisaTroco === "Sim" ? "Sim" : "Não") + "\n";
+                if (precisaTroco === "Sim") {
+                    mensagem += "💰 Troco para: " + formatarMoeda(valorTroco) + "\n";
+                }
+            }
+
+            mensagem += "\n*ITENS DO PEDIDO:*\n";
+
+            carrinho.forEach(function (item) {
+                const valor = item.preco * item.quantidade;
+                mensagem += "\n🌭 " + item.nome + "\n";
+                mensagem += "Quantidade: " + item.quantidade + "\n";
+                mensagem += "Valor: " + formatarMoeda(valor) + "\n";
+                if (item.personalizacao) {
+                    mensagem += "Personalização: " + item.personalizacao + "\n";
+                }
+            });
+
+            mensagem += "\n";
+            mensagem += "💰 Subtotal: " + formatarMoeda(subtotal) + "\n";
+            mensagem += "🚚 Entrega: " + formatarMoeda(taxa) + "\n";
+            mensagem += "💵 *TOTAL: " + formatarMoeda(total) + "*\n";
+
+            if (observacao) {
+                mensagem += "\n📝 Observação: " + observacao + "\n";
+            }
+
+            mensagem += "\nObrigado pelo pedido! ❤️";
+
+            const numeroWhatsApp = "5518991851790";
+            const url = "https://wa.me/" + numeroWhatsApp + "?text=" + encodeURIComponent(mensagem);
+
+            window.open(url, "_blank");
         }
-        if (valorTroco < total) {
-            alert("O valor para o troco não pode ser menor que o total do pedido.");
-            return;
-        }
-    }
-
-    let mensagem = "🌭 *HOT DOG BELLINI* 🌭\n";
-    mensagem += "Simone Bellini\n\n";
-    mensagem += "*NOVO PEDIDO*\n\n";
-    mensagem += "👤 Cliente: " + nome + "\n";
-    mensagem += "📦 Tipo: " + (tipo === "entrega" ? "Entrega" : "Retirada") + "\n";
-
-    if (tipo === "entrega") {
-        mensagem += "📍 Endereço: " + endereco + "\n";
-        mensagem += "🚚 Taxa de entrega: R$ 5,00\n";
-        mensagem += "⏱️ *Prazo estimado:* 30 min a 1 hora (pode variar em horários de pico)\n";
-    }
-
-    mensagem += "💳 Pagamento: " + pagamento + "\n";
-
-    if (pagamento === "Dinheiro") {
-        mensagem += "💵 Precisa de troco: " + (precisaTroco === "Sim" ? "Sim" : "Não") + "\n";
-        if (precisaTroco === "Sim") {
-            mensagem += "💰 Troco para: " + formatarMoeda(valorTroco) + "\n";
-        }
-    }
-
-    mensagem += "\n*ITENS DO PEDIDO:*\n";
-
-    carrinho.forEach(function (item) {
-        const valor = item.preco * item.quantidade;
-        mensagem += "\n🌭 " + item.nome + "\n";
-        mensagem += "Quantidade: " + item.quantidade + "\n";
-        mensagem += "Valor: " + formatarMoeda(valor) + "\n";
-        if (item.personalizacao) {
-            mensagem += "Personalização: " + item.personalizacao + "\n";
-        }
-    });
-
-    mensagem += "\n";
-    mensagem += "💰 Subtotal: " + formatarMoeda(subtotal) + "\n";
-    mensagem += "🚚 Entrega: " + formatarMoeda(taxa) + "\n";
-    mensagem += "💵 *TOTAL: " + formatarMoeda(total) + "*\n";
-
-    if (observacao) {
-        mensagem += "\n📝 Observação: " + observacao + "\n";
-    }
-
-    mensagem += "\nObrigado pelo pedido! ❤️";
-
-    const numeroWhatsApp = "5518991851790";
-    const url = "https://wa.me/" + numeroWhatsApp + "?text=" + encodeURIComponent(mensagem);
-
-    window.open(url, "_blank");
-}
 
         /* ==========================================
            INICIALIZAÇÃO
         ========================================== */
         document.addEventListener("DOMContentLoaded", function () {
-            mostrarCategoria("promocoes");
+            mostrarCategoria("hotdog");
             atualizarCarrinho();
         });
     </script>
