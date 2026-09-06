@@ -1961,115 +1961,116 @@
            FINALIZAR PEDIDO
         ========================================== */
         function finalizarPedido() {
-            if (carrinho.length === 0) {
-                alert("Seu carrinho está vazio.");
-                return;
-            }
+    if (carrinho.length === 0) {
+        alert("Seu carrinho está vazio.");
+        return;
+    }
 
-            const campoNome = document.getElementById("nomeCliente");
-            const nome = campoNome ? campoNome.value.trim() : "";
-            if (!nome) {
-                alert("Digite o nome do cliente.");
-                return;
-            }
+    const campoNome = document.getElementById("nomeCliente");
+    const nome = campoNome ? campoNome.value.trim() : "";
+    if (!nome) {
+        alert("Digite o nome do cliente.");
+        return;
+    }
 
-            const tipoSelecionado = document.querySelector('input[name="tipoPedido"]:checked');
-            if (!tipoSelecionado) {
-                alert("Escolha se o pedido será para retirada ou entrega.");
-                return;
-            }
-            const tipo = tipoSelecionado.value;
+    const tipoSelecionado = document.querySelector('input[name="tipoPedido"]:checked');
+    if (!tipoSelecionado) {
+        alert("Escolha se o pedido será para retirada ou entrega.");
+        return;
+    }
+    const tipo = tipoSelecionado.value;
 
-            const campoEndereco = document.getElementById("endereco");
-            const endereco = campoEndereco ? campoEndereco.value.trim() : "";
-            if (tipo === "entrega" && !endereco) {
-                alert("Digite o endereço para entrega.");
-                return;
-            }
+    const campoEndereco = document.getElementById("endereco");
+    const endereco = campoEndereco ? campoEndereco.value.trim() : "";
+    if (tipo === "entrega" && !endereco) {
+        alert("Digite o endereço para entrega.");
+        return;
+    }
 
-            const campoPagamento = document.getElementById("pagamento");
-            const pagamento = campoPagamento ? campoPagamento.value : "";
-            if (!pagamento) {
-                alert("Escolha a forma de pagamento.");
-                return;
-            }
+    const campoPagamento = document.getElementById("pagamento");
+    const pagamento = campoPagamento ? campoPagamento.value : "";
+    if (!pagamento) {
+        alert("Escolha a forma de pagamento.");
+        return;
+    }
 
-            const campoPrecisaTroco = document.getElementById("precisaTroco");
-            const precisaTroco = campoPrecisaTroco ? campoPrecisaTroco.value : "Nao";
+    const campoPrecisaTroco = document.getElementById("precisaTroco");
+    const precisaTroco = campoPrecisaTroco ? campoPrecisaTroco.value : "Nao";
 
-            const campoValorTroco = document.getElementById("valorTroco");
-            const valorTroco = campoValorTroco ? parseFloat(campoValorTroco.value) || 0 : 0;
+    const campoValorTroco = document.getElementById("valorTroco");
+    const valorTroco = campoValorTroco ? parseFloat(campoValorTroco.value) || 0 : 0;
 
-            const campoObservacao = document.getElementById("observacao");
-            const observacao = campoObservacao ? campoObservacao.value.trim() : "";
+    const campoObservacao = document.getElementById("observacao");
+    const observacao = campoObservacao ? campoObservacao.value.trim() : "";
 
-            let subtotal = 0;
-            carrinho.forEach(function (item) {
-                subtotal += item.preco * item.quantidade;
-            });
+    let subtotal = 0;
+    carrinho.forEach(function (item) {
+        subtotal += item.preco * item.quantidade;
+    });
 
-            const taxa = tipo === "entrega" ? 3 : 0;
-            const total = subtotal + taxa;
+    const taxa = tipo === "entrega" ? 5 : 0;
+    const total = subtotal + taxa;
 
-            if (pagamento === "Dinheiro" && precisaTroco === "Sim") {
-                if (valorTroco <= 0) {
-                    alert("Informe o valor para o qual precisa de troco.");
-                    return;
-                }
-                if (valorTroco < total) {
-                    alert("O valor para o troco não pode ser menor que o total do pedido.");
-                    return;
-                }
-            }
-
-            let mensagem = "🌭 *HOT DOG BELLINI* 🌭\n";
-            mensagem += "Simone Bellini\n\n";
-            mensagem += "*NOVO PEDIDO*\n\n";
-            mensagem += "👤 Cliente: " + nome + "\n";
-            mensagem += "📦 Tipo: " + (tipo === "entrega" ? "Entrega" : "Retirada") + "\n";
-
-            if (tipo === "entrega") {
-                mensagem += "📍 Endereço: " + endereco + "\n";
-                mensagem += "🚚 Taxa de entrega: R$ 3,00\n";
-            }
-
-            mensagem += "💳 Pagamento: " + pagamento + "\n";
-
-            if (pagamento === "Dinheiro") {
-                mensagem += "💵 Precisa de troco: " + (precisaTroco === "Sim" ? "Sim" : "Não") + "\n";
-                if (precisaTroco === "Sim") {
-                    mensagem += "💰 Troco para: " + formatarMoeda(valorTroco) + "\n";
-                }
-            }
-
-            mensagem += "\n*ITENS DO PEDIDO:*\n";
-
-            carrinho.forEach(function (item) {
-                const valor = item.preco * item.quantidade;
-                mensagem += "\n🌭 " + item.nome + "\n";
-                mensagem += "Quantidade: " + item.quantidade + "\n";
-                mensagem += "Valor: " + formatarMoeda(valor) + "\n";
-                if (item.personalizacao) {
-                    mensagem += "Personalização: " + item.personalizacao + "\n";
-                }
-            });
-
-            mensagem += "\n";
-            mensagem += "💰 Subtotal: " + formatarMoeda(subtotal) + "\n";
-            mensagem += "🚚 Entrega: " + formatarMoeda(taxa) + "\n";
-            mensagem += "💵 *TOTAL: " + formatarMoeda(total) + "*\n";
-
-            if (observacao) {
-                mensagem += "\n📝 Observação: " + observacao + "\n";
-            }
-
-            mensagem += "\nObrigado pelo pedido! ❤️";
-
-            const numeroWhatsApp = "551899185-1790";
-            const url = "https://wa.me/" + numeroWhatsApp + "?text=" + encodeURIComponent(mensagem);
-
-            window.open(url, "_blank");
+    if (pagamento === "Dinheiro" && precisaTroco === "Sim") {
+        if (valorTroco <= 0) {
+            alert("Informe o valor para o qual precisa de troco.");
+            return;
         }
+        if (valorTroco < total) {
+            alert("O valor para o troco não pode ser menor que o total do pedido.");
+            return;
+        }
+    }
+
+    let mensagem = "🌭 *HOT DOG BELLINI* 🌭\n";
+    mensagem += "Simone Bellini\n\n";
+    mensagem += "*NOVO PEDIDO*\n\n";
+    mensagem += "👤 Cliente: " + nome + "\n";
+    mensagem += "📦 Tipo: " + (tipo === "entrega" ? "Entrega" : "Retirada") + "\n";
+
+    if (tipo === "entrega") {
+        mensagem += "📍 Endereço: " + endereco + "\n";
+        mensagem += "🚚 Taxa de entrega: R$ 5,00\n";
+        mensagem += "⏱️ *Prazo estimado:* 30 min a 1 hora (pode variar em horários de pico)\n";
+    }
+
+    mensagem += "💳 Pagamento: " + pagamento + "\n";
+
+    if (pagamento === "Dinheiro") {
+        mensagem += "💵 Precisa de troco: " + (precisaTroco === "Sim" ? "Sim" : "Não") + "\n";
+        if (precisaTroco === "Sim") {
+            mensagem += "💰 Troco para: " + formatarMoeda(valorTroco) + "\n";
+        }
+    }
+
+    mensagem += "\n*ITENS DO PEDIDO:*\n";
+
+    carrinho.forEach(function (item) {
+        const valor = item.preco * item.quantidade;
+        mensagem += "\n🌭 " + item.nome + "\n";
+        mensagem += "Quantidade: " + item.quantidade + "\n";
+        mensagem += "Valor: " + formatarMoeda(valor) + "\n";
+        if (item.personalizacao) {
+            mensagem += "Personalização: " + item.personalizacao + "\n";
+        }
+    });
+
+    mensagem += "\n";
+    mensagem += "💰 Subtotal: " + formatarMoeda(subtotal) + "\n";
+    mensagem += "🚚 Entrega: " + formatarMoeda(taxa) + "\n";
+    mensagem += "💵 *TOTAL: " + formatarMoeda(total) + "*\n";
+
+    if (observacao) {
+        mensagem += "\n📝 Observação: " + observacao + "\n";
+    }
+
+    mensagem += "\nObrigado pelo pedido! ❤️";
+
+    const numeroWhatsApp = "5518991851790";
+    const url = "https://wa.me/" + numeroWhatsApp + "?text=" + encodeURIComponent(mensagem);
+
+    window.open(url, "_blank");
+}
 
         /* ==========================================
            INICIALIZAÇÃO
