@@ -91,6 +91,58 @@
         }
 
         /* ==========================================
+           OPÇÕES DE ADICIONAIS NOS CARDS
+        ========================================== */
+        .adicionais-container {
+            margin: 10px 0;
+            background: #f8f8f8;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 8px 10px;
+        }
+
+        .adicionais-container summary {
+            font-weight: bold;
+            font-size: 13px;
+            color: #d71920;
+            cursor: pointer;
+            outline: none;
+            user-select: none;
+        }
+
+        .adicionais-lista {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 8px;
+            padding-top: 6px;
+            border-top: 1px dashed #ddd;
+        }
+
+        .adicionais-lista label {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .adicionais-lista label span {
+            color: #d71920;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .adicionais-lista input[type="checkbox"] {
+            margin-right: 6px;
+            accent-color: #d71920;
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        /* ==========================================
            RESPONSIVO - CELULAR
         ========================================== */
         @media (max-width: 600px) {
@@ -1061,6 +1113,21 @@
                         <h3>Hot Kids</h3>
                         <p class="descricao">Pão, salsicha, molhos, batata palha.</p>
                         <div class="preco">R$ 9,99</div>
+
+                        <details class="adicionais-container">
+                            <summary>➕ Adicionais (opcional)</summary>
+                            <div class="adicionais-lista">
+                                <label><input type="checkbox" value="5.00" data-nome="Bacon "> Bacon <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Calabresa"> Calabresa <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Presunto"> Presunto <span>+R$ 5,00</span></label>
+                                 <label><input type="checkbox" value="5.00" data-nome="Queijo"> Queijo <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Salsicha "> Salsicha  <span>+R$ 3,50</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Milho"> Milho <span>+R$ 3,50</span></label>
+                                 <label><input type="checkbox" value="3.50" data-nome="Azeitona"> Azeitona <span>+R$ 3,50</span></label>
+                                  <label><input type="checkbox" value="3.50" data-nome="Ovo"> Ovo <span>+R$ 3,50</span></label>
+                            </div>
+                        </details>
+
                         <button class="btn-adicionar" onclick="adicionarProduto(this)">Adicionar ao carrinho</button>
                     </div>
                 </div>
@@ -1071,6 +1138,21 @@
                         <h3>Hot Dog Simples</h3>
                         <p class="descricao">Pão, salsicha, molhos, alface, tomate e batata palha.</p>
                         <div class="preco">R$ 14,99</div>
+
+                       <details class="adicionais-container">
+                            <summary>➕ Adicionais (opcional)</summary>
+                            <div class="adicionais-lista">
+                                <label><input type="checkbox" value="5.00" data-nome="Bacon "> Bacon <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Calabresa"> Calabresa <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Presunto"> Presunto <span>+R$ 5,00</span></label>
+                                 <label><input type="checkbox" value="5.00" data-nome="Queijo"> Queijo <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Salsicha "> Salsicha  <span>+R$ 3,50</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Milho"> Milho <span>+R$ 3,50</span></label>
+                                 <label><input type="checkbox" value="3.50" data-nome="Azeitona"> Azeitona <span>+R$ 3,50</span></label>
+                                  <label><input type="checkbox" value="3.50" data-nome="Ovo"> Ovo <span>+R$ 3,50</span></label>
+                            </div>
+                        </details>
+
                         <button class="btn-adicionar" onclick="adicionarProduto(this)">Adicionar ao carrinho</button>
                     </div>
                 </div>
@@ -1081,6 +1163,21 @@
                         <h3>Hot Dog com purê</h3>
                         <p class="descricao">Pão, salsicha, purê de batata, queijo, molhos, alface, tomate e batata palha.</p>
                         <div class="preco">R$ 21,99</div>
+
+                       <details class="adicionais-container">
+                            <summary>➕ Adicionais (opcional)</summary>
+                            <div class="adicionais-lista">
+                                <label><input type="checkbox" value="5.00" data-nome="Bacon "> Bacon <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Calabresa"> Calabresa <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Presunto"> Presunto <span>+R$ 5,00</span></label>
+                                 <label><input type="checkbox" value="5.00" data-nome="Queijo"> Queijo <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Salsicha "> Salsicha  <span>+R$ 3,50</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Milho"> Milho <span>+R$ 3,50</span></label>
+                                 <label><input type="checkbox" value="3.50" data-nome="Azeitona"> Azeitona <span>+R$ 3,50</span></label>
+                                  <label><input type="checkbox" value="3.50" data-nome="Ovo"> Ovo <span>+R$ 3,50</span></label>
+                            </div>
+                        </details>
+
                         <button class="btn-adicionar" onclick="adicionarProduto(this)">Adicionar ao carrinho</button>
                     </div>
                 </div>
@@ -1091,6 +1188,20 @@
                         <h3>Hot Pizza</h3>
                         <p class="descricao">Pão, salsicha, presunto, queijo, orégano, molhos, tomate e batata palha.</p>
                         <div class="preco">R$ 24,99</div>
+
+                        <details class="adicionais-container">
+                            <summary>➕ Adicionais (opcional)</summary>
+                            <div class="adicionais-lista">
+                                <label><input type="checkbox" value="5.00" data-nome="Bacon "> Bacon <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Calabresa"> Calabresa <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Presunto"> Presunto <span>+R$ 5,00</span></label>
+                                 <label><input type="checkbox" value="5.00" data-nome="Queijo"> Queijo <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Salsicha "> Salsicha  <span>+R$ 3,50</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Milho"> Milho <span>+R$ 3,50</span></label>
+                                 <label><input type="checkbox" value="3.50" data-nome="Azeitona"> Azeitona <span>+R$ 3,50</span></label>
+                                  <label><input type="checkbox" value="3.50" data-nome="Ovo"> Ovo <span>+R$ 3,50</span></label>
+                            </div>
+                        </details>
                         <button class="btn-adicionar" onclick="adicionarProduto(this)">Adicionar ao carrinho</button>
                     </div>
                 </div>
@@ -1101,6 +1212,21 @@
                         <h3>Hot Cebola caramelizada</h3>
                         <p class="descricao">Pão, salsicha, catupiry, queijo, bacon, cebola caramelizada, molhos e batata palha.</p>
                         <div class="preco">R$ 24,99</div>
+
+                        <details class="adicionais-container">
+                            <summary>➕ Adicionais (opcional)</summary>
+                            <div class="adicionais-lista">
+                                <label><input type="checkbox" value="5.00" data-nome="Bacon "> Bacon <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Calabresa"> Calabresa <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Presunto"> Presunto <span>+R$ 5,00</span></label>
+                                 <label><input type="checkbox" value="5.00" data-nome="Queijo"> Queijo <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Salsicha "> Salsicha  <span>+R$ 3,50</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Milho"> Milho <span>+R$ 3,50</span></label>
+                                 <label><input type="checkbox" value="3.50" data-nome="Azeitona"> Azeitona <span>+R$ 3,50</span></label>
+                                  <label><input type="checkbox" value="3.50" data-nome="Ovo"> Ovo <span>+R$ 3,50</span></label>
+                            </div>
+                        </details>
+
                         <button class="btn-adicionar" onclick="adicionarProduto(this)">Adicionar ao carrinho</button>
                     </div>
                 </div>
@@ -1115,13 +1241,52 @@
             </div>
 
             <div class="produtos">
-                <div class="card promocao" data-categoria="promocoes" data-nome="Batata Recheada" data-preco="19.99">
-                    <img src="batatarecheada.jpeg" alt="Batata Recheada">
+                <div class="card promocao" data-categoria="promocoes" data-nome="Hot Dog Simples" data-preco="11.99">
+                    <img src="https://www.perdigao.com.br/assets/_images/5f79fb9c5259bf77a8b1e9750b81e3bb4e9f093b.webp" alt="Hot Dog Simples">
                     <div class="card-conteudo">
-                        <span class="etiqueta">PROMOÇÃO</span>
-                        <h3>Batata Recheada aproximadamente 500 gramas sabor pizza</h3>
-                        <p class="descricao">Batata Recheada 500 gramas, macarrão parafuso, molho branco com brócolis, queijo, bacon e azeitona.</p>
-                        <div class="preco">R$ 19,99</div>
+                        <h3>Hot Dog Simples</h3>
+                        <p class="descricao">Pão, salsicha, molhos, alface, tomate e batata palha.</p>
+                        <div class="preco">R$ 11,99</div>
+
+                       <details class="adicionais-container">
+                            <summary>➕ Adicionais (opcional)</summary>
+                            <div class="adicionais-lista">
+                                <label><input type="checkbox" value="5.00" data-nome="Bacon "> Bacon <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Calabresa"> Calabresa <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Presunto"> Presunto <span>+R$ 5,00</span></label>
+                                 <label><input type="checkbox" value="5.00" data-nome="Queijo"> Queijo <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Salsicha "> Salsicha  <span>+R$ 3,50</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Milho"> Milho <span>+R$ 3,50</span></label>
+                                 <label><input type="checkbox" value="3.50" data-nome="Azeitona"> Azeitona <span>+R$ 3,50</span></label>
+                                  <label><input type="checkbox" value="3.50" data-nome="Ovo"> Ovo <span>+R$ 3,50</span></label>
+                            </div>
+                        </details>
+
+                        <button class="btn-adicionar" onclick="adicionarProduto(this)">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+
+                <div class="card promocao" data-categoria="promocoes" data-nome="X-Salada" data-preco="11.99">
+                    <img src="salada.jpg" alt="X-salada">
+                    <div class="card-conteudo">
+                        <h3>X-Salada</h3>
+                        <p class="descricao">Pão, Hambúrguer, queijo, alface e Tomate.</p>
+                        <div class="preco">R$ 11,99</div>
+
+                        <details class="adicionais-container">
+                            <summary>➕ Adicionais (opcional)</summary>
+                            <div class="adicionais-lista">
+                                <label><input type="checkbox" value="5.00" data-nome="Bacon "> Bacon <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Calabresa"> Calabresa <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Presunto"> Presunto <span>+R$ 5,00</span></label>
+                                 <label><input type="checkbox" value="5.00" data-nome="Queijo"> Queijo <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Salsicha "> Salsicha  <span>+R$ 3,50</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Milho"> Milho <span>+R$ 3,50</span></label>
+                                 <label><input type="checkbox" value="3.50" data-nome="Azeitona"> Azeitona <span>+R$ 3,50</span></label>
+                                  <label><input type="checkbox" value="3.50" data-nome="Ovo"> Ovo <span>+R$ 3,50</span></label>
+                            </div>
+                        </details>
+
                         <button class="btn-adicionar" onclick="adicionarProduto(this)">Adicionar ao carrinho</button>
                     </div>
                 </div>
@@ -1142,6 +1307,21 @@
                         <h3>Hot Dog 30 cm Simples</h3>
                         <p class="descricao">Pão de 30 cm,salsicha, molhos, alface, tomate e batata palha.</p>
                         <div class="preco">R$ 29,99</div>
+
+                       <details class="adicionais-container">
+                            <summary>➕ Adicionais (opcional)</summary>
+                            <div class="adicionais-lista">
+                                <label><input type="checkbox" value="5.00" data-nome="Bacon "> Bacon <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Calabresa"> Calabresa <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Presunto"> Presunto <span>+R$ 5,00</span></label>
+                                 <label><input type="checkbox" value="5.00" data-nome="Queijo"> Queijo <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Salsicha "> Salsicha  <span>+R$ 3,50</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Milho"> Milho <span>+R$ 3,50</span></label>
+                                 <label><input type="checkbox" value="3.50" data-nome="Azeitona"> Azeitona <span>+R$ 3,50</span></label>
+                                  <label><input type="checkbox" value="3.50" data-nome="Ovo"> Ovo <span>+R$ 3,50</span></label>
+                            </div>
+                        </details>
+
                         <button class="btn-adicionar" onclick="adicionarProduto(this)">Adicionar ao carrinho</button>
                     </div>
                 </div>
@@ -1152,26 +1332,71 @@
                         <h3>Hot Dog 30 cm com purê</h3>
                         <p class="descricao">Pão de 30 cm, salsicha, purê de batata, queijo, molhos, alface, tomate e batata palha.</p>
                         <div class="preco">R$ 34,99</div>
+
+                        <details class="adicionais-container">
+                            <summary>➕ Adicionais (opcional)</summary>
+                            <div class="adicionais-lista">
+                                <label><input type="checkbox" value="5.00" data-nome="Bacon "> Bacon <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Calabresa"> Calabresa <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Presunto"> Presunto <span>+R$ 5,00</span></label>
+                                 <label><input type="checkbox" value="5.00" data-nome="Queijo"> Queijo <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Salsicha "> Salsicha  <span>+R$ 3,50</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Milho"> Milho <span>+R$ 3,50</span></label>
+                                 <label><input type="checkbox" value="3.50" data-nome="Azeitona"> Azeitona <span>+R$ 3,50</span></label>
+                                  <label><input type="checkbox" value="3.50" data-nome="Ovo"> Ovo <span>+R$ 3,50</span></label>
+                            </div>
+                        </details>
+
                         <button class="btn-adicionar" onclick="adicionarProduto(this)">Adicionar ao carrinho</button>
                     </div>
                 </div>
 
-                 <div class="card" data-categoria="hotdog30cm" data-nome="Hot Dog 30 cm sabor pizza" data-preco="39.99">
+                <div class="card" data-categoria="hotdog30cm" data-nome="Hot Dog 30 cm com cebola caramelizada" data-preco="39.99">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQilFPv9lyAZTIz9iT-pqwh8x3mRhK7WsQU3dZ5UgABoz1gHlRABY5E0VBi&s=10" alt="Hot Dog 30 cm com cebola caramelizada">
                     <div class="card-conteudo">
                         <h3>Hot Dog 30 cm com cebola caramelizada</h3>
                         <p class="descricao">Pão de 30 cm, salsicha, catupiry, Bacon, queijo, molhos, Cebola caramelizada e batata palha.</p>
                         <div class="preco">R$ 39,99</div>
+
+                        <details class="adicionais-container">
+                            <summary>➕ Adicionais (opcional)</summary>
+                            <div class="adicionais-lista">
+                                <label><input type="checkbox" value="5.00" data-nome="Bacon "> Bacon <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Calabresa"> Calabresa <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Presunto"> Presunto <span>+R$ 5,00</span></label>
+                                 <label><input type="checkbox" value="5.00" data-nome="Queijo"> Queijo <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Salsicha "> Salsicha  <span>+R$ 3,50</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Milho"> Milho <span>+R$ 3,50</span></label>
+                                 <label><input type="checkbox" value="3.50" data-nome="Azeitona"> Azeitona <span>+R$ 3,50</span></label>
+                                  <label><input type="checkbox" value="3.50" data-nome="Ovo"> Ovo <span>+R$ 3,50</span></label>
+                            </div>
+                        </details>
+
                         <button class="btn-adicionar" onclick="adicionarProduto(this)">Adicionar ao carrinho</button>
                     </div>
                 </div>
 
-                 <div class="card" data-categoria="hotdog30cm" data-nome="Hot Dog 30 cm com cebola caramelizada" data-preco="34.99">
+                <div class="card" data-categoria="hotdog30cm" data-nome="Hot Dog 30 cm sabor pizza" data-preco="34.99">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKOCHVM6MGpt-sIiQYlLdFG4jf_aLmnDhX_iX9Y2WEJ_Yx8gMBgLI2iXQ&s=10" alt="Hot Dog 30 cm sabor pizza">
                     <div class="card-conteudo">
                         <h3>Hot Dog 30 cm sabor pizza</h3>
                         <p class="descricao">Pão de 30 cm, salsicha, Presunto, queijo, molhos, Orégano e batata palha.</p>
                         <div class="preco">R$ 34,99</div>
+
+                       <details class="adicionais-container">
+                            <summary>➕ Adicionais (opcional)</summary>
+                            <div class="adicionais-lista">
+                                <label><input type="checkbox" value="5.00" data-nome="Bacon "> Bacon <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Calabresa"> Calabresa <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Presunto"> Presunto <span>+R$ 5,00</span></label>
+                                 <label><input type="checkbox" value="5.00" data-nome="Queijo"> Queijo <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Salsicha "> Salsicha  <span>+R$ 3,50</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Milho"> Milho <span>+R$ 3,50</span></label>
+                                 <label><input type="checkbox" value="3.50" data-nome="Azeitona"> Azeitona <span>+R$ 3,50</span></label>
+                                  <label><input type="checkbox" value="3.50" data-nome="Ovo"> Ovo <span>+R$ 3,50</span></label>
+                            </div>
+                        </details>
+
                         <button class="btn-adicionar" onclick="adicionarProduto(this)">Adicionar ao carrinho</button>
                     </div>
                 </div>
@@ -1193,6 +1418,9 @@
                         <h3>Hot Dog Brigadeiro</h3>
                         <p class="descricao">Pão, recheio de Brigadeiro e granulado.</p>
                         <div class="preco">R$ 19,99</div>
+
+                      
+
                         <button class="btn-adicionar" onclick="adicionarProduto(this)">Adicionar ao carrinho</button>
                     </div>
                 </div>
@@ -1203,16 +1431,22 @@
                         <h3>Hot Dog Doce de Ninho</h3>
                         <p class="descricao">Pão, doce de Ninho e Confete.</p>
                         <div class="preco">R$ 24,99</div>
+
+                    
+
                         <button class="btn-adicionar" onclick="adicionarProduto(this)">Adicionar ao carrinho</button>
                     </div>
                 </div>
 
-                 <div class="card" data-categoria="hotdogdoce" data-nome="Hot Dog Doce de Nutella" data-preco="29.99">
+                <div class="card" data-categoria="hotdogdoce" data-nome="Hot Dog Doce de Nutella" data-preco="29.99">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe6k5h-fGFVWCIjJ4PTpLEduTVjZX7moj3eI6xmJc0MnQIfb2t0rk8tsA&s=10" alt="Hot Dog Doce de Nutella" onerror="this.src='imagens/sem-foto.jpg'">
                     <div class="card-conteudo">
                         <h3>Hot Dog Doce de Nutella</h3>
                         <p class="descricao">Pão, Nutella e Confete.</p>
                         <div class="preco">R$ 29,99</div>
+
+                       
+
                         <button class="btn-adicionar" onclick="adicionarProduto(this)">Adicionar ao carrinho</button>
                     </div>
                 </div>
@@ -1233,6 +1467,21 @@
                         <h3>X-Burguer</h3>
                         <p class="descricao">Pão, Hambúrguer, Presunto e queijo.</p>
                         <div class="preco">R$ 11,99</div>
+
+                       <details class="adicionais-container">
+                            <summary>➕ Adicionais (opcional)</summary>
+                            <div class="adicionais-lista">
+                                <label><input type="checkbox" value="5.00" data-nome="Bacon "> Bacon <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Calabresa"> Calabresa <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Presunto"> Presunto <span>+R$ 5,00</span></label>
+                                 <label><input type="checkbox" value="5.00" data-nome="Queijo"> Queijo <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Salsicha "> Salsicha  <span>+R$ 3,50</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Milho"> Milho <span>+R$ 3,50</span></label>
+                                 <label><input type="checkbox" value="3.50" data-nome="Azeitona"> Azeitona <span>+R$ 3,50</span></label>
+                                  <label><input type="checkbox" value="3.50" data-nome="Ovo"> Ovo <span>+R$ 3,50</span></label>
+                            </div>
+                        </details>
+
                         <button class="btn-adicionar" onclick="adicionarProduto(this)">Adicionar ao carrinho</button>
                     </div>
                 </div>
@@ -1243,6 +1492,21 @@
                         <h3>X-Salada</h3>
                         <p class="descricao">Pão, Hambúrguer, queijo, alface e Tomate.</p>
                         <div class="preco">R$ 14,99</div>
+
+                       <details class="adicionais-container">
+                            <summary>➕ Adicionais (opcional)</summary>
+                            <div class="adicionais-lista">
+                                <label><input type="checkbox" value="5.00" data-nome="Bacon "> Bacon <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Calabresa"> Calabresa <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Presunto"> Presunto <span>+R$ 5,00</span></label>
+                                 <label><input type="checkbox" value="5.00" data-nome="Queijo"> Queijo <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Salsicha "> Salsicha  <span>+R$ 3,50</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Milho"> Milho <span>+R$ 3,50</span></label>
+                                 <label><input type="checkbox" value="3.50" data-nome="Azeitona"> Azeitona <span>+R$ 3,50</span></label>
+                                  <label><input type="checkbox" value="3.50" data-nome="Ovo"> Ovo <span>+R$ 3,50</span></label>
+                            </div>
+                        </details>
+
                         <button class="btn-adicionar" onclick="adicionarProduto(this)">Adicionar ao carrinho</button>
                     </div>
                 </div>
@@ -1253,6 +1517,21 @@
                         <h3>X-Egg</h3>
                         <p class="descricao">Pão, Hambúrguer, queijo, catupiry, ovo, alface e Tomate.</p>
                         <div class="preco">R$ 24,99</div>
+
+                       <details class="adicionais-container">
+                            <summary>➕ Adicionais (opcional)</summary>
+                            <div class="adicionais-lista">
+                                <label><input type="checkbox" value="5.00" data-nome="Bacon "> Bacon <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Calabresa"> Calabresa <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Presunto"> Presunto <span>+R$ 5,00</span></label>
+                                 <label><input type="checkbox" value="5.00" data-nome="Queijo"> Queijo <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Salsicha "> Salsicha  <span>+R$ 3,50</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Milho"> Milho <span>+R$ 3,50</span></label>
+                                 <label><input type="checkbox" value="3.50" data-nome="Azeitona"> Azeitona <span>+R$ 3,50</span></label>
+                                  <label><input type="checkbox" value="3.50" data-nome="Ovo"> Ovo <span>+R$ 3,50</span></label>
+                            </div>
+                        </details>
+
                         <button class="btn-adicionar" onclick="adicionarProduto(this)">Adicionar ao carrinho</button>
                     </div>
                 </div>
@@ -1263,6 +1542,21 @@
                         <h3>X-Bacon</h3>
                         <p class="descricao">Pão, Hambúrguer, queijo, catupiry, Bacon, alface e Tomate.</p>
                         <div class="preco">R$ 27,99</div>
+
+                       <details class="adicionais-container">
+                            <summary>➕ Adicionais (opcional)</summary>
+                            <div class="adicionais-lista">
+                                <label><input type="checkbox" value="5.00" data-nome="Bacon "> Bacon <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Calabresa"> Calabresa <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Presunto"> Presunto <span>+R$ 5,00</span></label>
+                                 <label><input type="checkbox" value="5.00" data-nome="Queijo"> Queijo <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Salsicha "> Salsicha  <span>+R$ 3,50</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Milho"> Milho <span>+R$ 3,50</span></label>
+                                 <label><input type="checkbox" value="3.50" data-nome="Azeitona"> Azeitona <span>+R$ 3,50</span></label>
+                                  <label><input type="checkbox" value="3.50" data-nome="Ovo"> Ovo <span>+R$ 3,50</span></label>
+                            </div>
+                        </details>
+
                         <button class="btn-adicionar" onclick="adicionarProduto(this)">Adicionar ao carrinho</button>
                     </div>
                 </div>
@@ -1273,6 +1567,20 @@
                         <h3>X-Tudo</h3>
                         <p class="descricao">Pão, Hambúrguer, Frango Empanado, Presunto, queijo, Salsicha, catupiry, Cheddar, alface e Tomate.</p>
                         <div class="preco">R$ 29,99</div>
+
+                        <details class="adicionais-container">
+                            <summary>➕ Adicionais (opcional)</summary>
+                            <div class="adicionais-lista">
+                                <label><input type="checkbox" value="5.00" data-nome="Bacon "> Bacon <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Calabresa"> Calabresa <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Presunto"> Presunto <span>+R$ 5,00</span></label>
+                                 <label><input type="checkbox" value="5.00" data-nome="Queijo"> Queijo <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Salsicha "> Salsicha  <span>+R$ 3,50</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Milho"> Milho <span>+R$ 3,50</span></label>
+                                 <label><input type="checkbox" value="3.50" data-nome="Azeitona"> Azeitona <span>+R$ 3,50</span></label>
+                                  <label><input type="checkbox" value="3.50" data-nome="Ovo"> Ovo <span>+R$ 3,50</span></label>
+                            </div>
+                        </details>
                         <button class="btn-adicionar" onclick="adicionarProduto(this)">Adicionar ao carrinho</button>
                     </div>
                 </div>
@@ -1283,6 +1591,21 @@
                         <h3>X-Frango</h3>
                         <p class="descricao">Pão, Hambúrguer, Frango desfiado, milho, catupiry, alface e Tomate.</p>
                         <div class="preco">R$ 29,99</div>
+
+                        <details class="adicionais-container">
+                            <summary>➕ Adicionais (opcional)</summary>
+                            <div class="adicionais-lista">
+                                <label><input type="checkbox" value="5.00" data-nome="Bacon "> Bacon <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Calabresa"> Calabresa <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="5.00" data-nome="Presunto"> Presunto <span>+R$ 5,00</span></label>
+                                 <label><input type="checkbox" value="5.00" data-nome="Queijo"> Queijo <span>+R$ 5,00</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Salsicha "> Salsicha  <span>+R$ 3,50</span></label>
+                                <label><input type="checkbox" value="3.50" data-nome="Milho"> Milho <span>+R$ 3,50</span></label>
+                                 <label><input type="checkbox" value="3.50" data-nome="Azeitona"> Azeitona <span>+R$ 3,50</span></label>
+                                  <label><input type="checkbox" value="3.50" data-nome="Ovo"> Ovo <span>+R$ 3,50</span></label>
+                            </div>
+                        </details>
+
                         <button class="btn-adicionar" onclick="adicionarProduto(this)">Adicionar ao carrinho</button>
                     </div>
                 </div>
@@ -1509,50 +1832,71 @@
                     </div>
                     <div class="contador-ingredientes" id="contadorIngredientes">0 de 4 ingredientes selecionados</div>
                 </div>
+
+                <div class="grupo-opcao" style="margin-top: 15px;">
+                    <h3>➕ Adicionais (opcional)</h3>
+                    <div class="opcoes">
+                        <label class="opcao"><input type="checkbox" name="adicionalMacarrao" value="3.00" data-nome="Bacon Extra"> Bacon Extra (+R$ 3,00)</label>
+                        <label class="opcao"><input type="checkbox" name="adicionalMacarrao" value="3.00" data-nome="Queijo Extra"> Queijo Extra (+R$ 3,00)</label>
+                        <label class="opcao"><input type="checkbox" name="adicionalMacarrao" value="3.00" data-nome="Catupiry Extra"> Catupiry Extra (+R$ 3,00)</label>
+                        <label class="opcao"><input type="checkbox" name="adicionalMacarrao" value="5.00" data-nome="Carne Extra"> Carne Extra (+R$ 5,00)</label>
+                        <label class="opcao"><input type="checkbox" name="adicionalMacarrao" value="4.00" data-nome="Frango Extra"> Frango Extra (+R$ 4,00)</label>
+                    </div>
+                </div>
             </div>
 
             <!-- BATATA -->
-          <div class="opcoes-personalizacao" id="opcoesBatata" style="display:none;">
-    <div class="grupo-opcao">
-        <h3>🥔 Escolha o recheio</h3>
+            <div class="opcoes-personalizacao" id="opcoesBatata" style="display:none;">
+                <div class="grupo-opcao">
+                    <h3>🥔 Escolha o recheio</h3>
 
-        <p class="observacao">
-            🧀 <strong>Obs:</strong> Todas as batatas acompanham queijo e catupiry.
-        </p>
+                    <p class="observacao">
+                        🧀 <strong>Obs:</strong> Todas as batatas acompanham queijo e catupiry.
+                    </p>
 
-        <div class="opcoes">
-            <label class="opcao">
-                <input type="radio" name="recheioBatata" value="Frango">
-                Frango, queijo e catupiry
-            </label>
+                    <div class="opcoes">
+                        <label class="opcao">
+                            <input type="radio" name="recheioBatata" value="Frango">
+                            Frango, queijo e catupiry
+                        </label>
 
-            <label class="opcao">
-                <input type="radio" name="recheioBatata" value="Queijo">
-                Carne, Queijo e Catupiry
-            </label>
+                        <label class="opcao">
+                            <input type="radio" name="recheioBatata" value="Queijo">
+                            Carne, Queijo e Catupiry
+                        </label>
 
-            <label class="opcao">
-                <input type="radio" name="recheioBatata" value="Calabresa">
-                Calabresa, queijo e catupiry
-            </label>
+                        <label class="opcao">
+                            <input type="radio" name="recheioBatata" value="Calabresa">
+                            Calabresa, queijo e catupiry
+                        </label>
 
-            <label class="opcao">
-                <input type="radio" name="recheioBatata" value="Pizza">
-                Pizza
-            </label>
+                        <label class="opcao">
+                            <input type="radio" name="recheioBatata" value="Pizza">
+                            Pizza
+                        </label>
 
-            <label class="opcao">
-                <input type="radio" name="recheioBatata" value="Brócolis">
-                Brócolis, Bacon e queijo
-            </label>
+                        <label class="opcao">
+                            <input type="radio" name="recheioBatata" value="Brócolis">
+                            Brócolis, Bacon e queijo
+                        </label>
 
-            <label class="opcao">
-                <input type="radio" name="recheioBatata" value="3 Queijos">
-                3 Queijos
-            </label>
-        </div>
-    </div>
-</div>
+                        <label class="opcao">
+                            <input type="radio" name="recheioBatata" value="3 Queijos">
+                            3 Queijos
+                        </label>
+                    </div>
+                </div>
+
+                <div class="grupo-opcao" style="margin-top: 15px;">
+                    <h3>➕ Adicionais (opcional)</h3>
+                    <div class="opcoes">
+                        <label class="opcao"><input type="checkbox" name="adicionalBatata" value="3.00" data-nome="Bacon Extra"> Bacon Extra (+R$ 3,00)</label>
+                        <label class="opcao"><input type="checkbox" name="adicionalBatata" value="3.00" data-nome="Catupiry Extra"> Catupiry Extra (+R$ 3,00)</label>
+                        <label class="opcao"><input type="checkbox" name="adicionalBatata" value="3.00" data-nome="Cheddar Extra"> Cheddar Extra (+R$ 3,00)</label>
+                        <label class="opcao"><input type="checkbox" name="adicionalBatata" value="4.00" data-nome="Calabresa Extra"> Calabresa Extra (+R$ 4,00)</label>
+                    </div>
+                </div>
+            </div>
 
             <!-- CHURROS GOURMET -->
             <div class="opcoes-personalizacao" id="opcoesGourmet" style="display:none;">
@@ -1566,6 +1910,16 @@
                         <label class="opcao"><input type="radio" name="saborGourmet" value="Amendoim"> Amendoim</label>
                         <label class="opcao"><input type="radio" name="saborGourmet" value="Trento"> Trento</label>
                         <label class="opcao"><input type="radio" name="saborGourmet" value="Brigadeiro"> Brigadeiro</label>
+                    </div>
+                </div>
+
+                <div class="grupo-opcao" style="margin-top: 15px;">
+                    <h3>➕ Adicionais (opcional)</h3>
+                    <div class="opcoes">
+                        <label class="opcao"><input type="checkbox" name="adicionalGourmet" value="3.00" data-nome="Nutella Extra"> Nutella Extra (+R$ 3,00)</label>
+                        <label class="opcao"><input type="checkbox" name="adicionalGourmet" value="2.50" data-nome="Leite Ninho Extra"> Leite Ninho Extra (+R$ 2,50)</label>
+                        <label class="opcao"><input type="checkbox" name="adicionalGourmet" value="2.00" data-nome="Confete Extra"> Confete Extra (+R$ 2,00)</label>
+                        <label class="opcao"><input type="checkbox" name="adicionalGourmet" value="3.00" data-nome="Kit Kat Extra"> Kit Kat Extra (+R$ 3,00)</label>
                     </div>
                 </div>
             </div>
@@ -1589,6 +1943,16 @@
                     <input type="radio" name="saborDoce" value="Nutella">
                     Nutella — <strong>R$ 11,99</strong>
                 </label>
+
+                <div class="grupo-opcao" style="margin-top: 15px;">
+                    <h3>➕ Adicionais (opcional)</h3>
+                    <div class="opcoes">
+                        <label class="opcao"><input type="checkbox" name="adicionalDoce" value="3.00" data-nome="Nutella Extra"> Nutella Extra (+R$ 3,00)</label>
+                        <label class="opcao"><input type="checkbox" name="adicionalDoce" value="2.50" data-nome="Leite Ninho Extra"> Leite Ninho Extra (+R$ 2,50)</label>
+                        <label class="opcao"><input type="checkbox" name="adicionalDoce" value="2.00" data-nome="Confete Extra"> Confete Extra (+R$ 2,00)</label>
+                        <label class="opcao"><input type="checkbox" name="adicionalDoce" value="3.00" data-nome="Kit Kat Extra"> Kit Kat Extra (+R$ 3,00)</label>
+                    </div>
+                </div>
             </div>
 
             <!-- CHURROS SALGADO -->
@@ -1601,6 +1965,15 @@
                         <label class="opcao"><input type="radio" name="saborSalgado" value="Frango e catupiry"> Frango e catupiry</label>
                         <label class="opcao"><input type="radio" name="saborSalgado" value="Queijo"> Queijo</label>
                         <label class="opcao"><input type="radio" name="saborSalgado" value="Brócolis, bacon e queijo"> Brócolis, bacon e queijo</label>
+                    </div>
+                </div>
+
+                <div class="grupo-opcao" style="margin-top: 15px;">
+                    <h3>➕ Adicionais (opcional)</h3>
+                    <div class="opcoes">
+                        <label class="opcao"><input type="checkbox" name="adicionalSalgado" value="3.00" data-nome="Catupiry Extra"> Catupiry Extra (+R$ 3,00)</label>
+                        <label class="opcao"><input type="checkbox" name="adicionalSalgado" value="3.00" data-nome="Bacon Extra"> Bacon Extra (+R$ 3,00)</label>
+                        <label class="opcao"><input type="checkbox" name="adicionalSalgado" value="3.00" data-nome="Queijo Extra"> Queijo Extra (+R$ 3,00)</label>
                     </div>
                 </div>
             </div>
@@ -1718,14 +2091,38 @@
            ADICIONAR PRODUTO NORMAL
         ========================================== */
         function adicionarProduto(botao) {
-            const produto = pegarDadosProduto(botao);
-            if (!produto.nome) return;
+            const card = botao.closest(".card");
+            if (!card) return;
+
+            const nomeBase = card.dataset.nome || "";
+            const precoBase = parseFloat(card.dataset.preco) || 0;
+            if (!nomeBase) return;
+
+            let precoTotal = precoBase;
+            const adicionaisSelecionados = [];
+
+            const checkboxes = card.querySelectorAll('.adicionais-lista input[type="checkbox"]:checked');
+            checkboxes.forEach(function (cb) {
+                const valor = parseFloat(cb.value) || 0;
+                const nomeAdic = cb.getAttribute("data-nome") || cb.parentElement.textContent.trim();
+                precoTotal += valor;
+                adicionaisSelecionados.push(nomeAdic + " (+" + formatarMoeda(valor) + ")");
+            });
+
+            let personalizacao = "";
+            if (adicionaisSelecionados.length > 0) {
+                personalizacao = "Adicionais: " + adicionaisSelecionados.join(", ");
+            }
 
             carrinho.push({
-                nome: produto.nome,
-                preco: produto.preco,
+                nome: nomeBase,
+                preco: precoTotal,
                 quantidade: 1,
-                personalizacao: ""
+                personalizacao: personalizacao
+            });
+
+            checkboxes.forEach(function (cb) {
+                cb.checked = false;
             });
 
             atualizarCarrinho();
@@ -1819,6 +2216,8 @@
             if (!produtoPersonalizando) return;
 
             let personalizacao = "";
+            let precoAdicionais = 0;
+            let listaAdicionais = [];
 
             /* MACARRÃO */
             if (produtoPersonalizando.nome === "Macarrão") {
@@ -1842,6 +2241,13 @@
                 }
 
                 personalizacao = "Massa: " + massa + " | Molho: " + molho + " | Ingredientes: " + ingredientes.join(", ");
+
+                const cbs = document.querySelectorAll('input[name="adicionalMacarrao"]:checked');
+                cbs.forEach(function(cb) {
+                    const v = parseFloat(cb.value) || 0;
+                    precoAdicionais += v;
+                    listaAdicionais.push(cb.getAttribute("data-nome") + " (+" + formatarMoeda(v) + ")");
+                });
             }
 
             /* BATATA RECHEADA */
@@ -1852,6 +2258,13 @@
                     return;
                 }
                 personalizacao = "Recheio: " + recheio;
+
+                const cbs = document.querySelectorAll('input[name="adicionalBatata"]:checked');
+                cbs.forEach(function(cb) {
+                    const v = parseFloat(cb.value) || 0;
+                    precoAdicionais += v;
+                    listaAdicionais.push(cb.getAttribute("data-nome") + " (+" + formatarMoeda(v) + ")");
+                });
             }
 
             /* CHURROS GOURMET */
@@ -1862,6 +2275,13 @@
                     return;
                 }
                 personalizacao = "Sabor: " + sabor;
+
+                const cbs = document.querySelectorAll('input[name="adicionalGourmet"]:checked');
+                cbs.forEach(function(cb) {
+                    const v = parseFloat(cb.value) || 0;
+                    precoAdicionais += v;
+                    listaAdicionais.push(cb.getAttribute("data-nome") + " (+" + formatarMoeda(v) + ")");
+                });
             }
 
             /* CHURROS DOCE */
@@ -1890,6 +2310,13 @@
                         return;
                 }
                 personalizacao = "Sabor: " + sabor;
+
+                const cbs = document.querySelectorAll('input[name="adicionalDoce"]:checked');
+                cbs.forEach(function(cb) {
+                    const v = parseFloat(cb.value) || 0;
+                    precoAdicionais += v;
+                    listaAdicionais.push(cb.getAttribute("data-nome") + " (+" + formatarMoeda(v) + ")");
+                });
             }
 
             /* CHURROS SALGADO */
@@ -1900,12 +2327,23 @@
                     return;
                 }
                 personalizacao = "Sabor: " + sabor;
+
+                const cbs = document.querySelectorAll('input[name="adicionalSalgado"]:checked');
+                cbs.forEach(function(cb) {
+                    const v = parseFloat(cb.value) || 0;
+                    precoAdicionais += v;
+                    listaAdicionais.push(cb.getAttribute("data-nome") + " (+" + formatarMoeda(v) + ")");
+                });
+            }
+
+            if (listaAdicionais.length > 0) {
+                personalizacao += " | Adicionais: " + listaAdicionais.join(", ");
             }
 
             /* ADICIONAR AO CARRINHO */
             carrinho.push({
                 nome: produtoPersonalizando.nome,
-                preco: produtoPersonalizando.preco,
+                preco: produtoPersonalizando.preco + precoAdicionais,
                 quantidade: 1,
                 personalizacao: personalizacao
             });
