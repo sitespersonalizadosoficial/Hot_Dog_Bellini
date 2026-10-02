@@ -248,6 +248,35 @@
         }
 
         /* ==========================================
+           PROMOÇÃO DE SÁBADO
+        ========================================== */
+        .promocao-sabado {
+            border: 2px solid #ffd400;
+            box-shadow: 0 8px 22px rgba(215, 25, 32, 0.14);
+        }
+
+        .promocao-sabado .etiqueta {
+            background: #d71920;
+            color: #fff;
+            font-size: 12px;
+            padding: 7px 12px;
+        }
+
+        .promocao-sabado .preco {
+            font-size: 26px;
+            color: #d71920;
+        }
+
+        .promocao-sabado .btn-adicionar {
+            background: linear-gradient(135deg, #d71920, #b9151b);
+        }
+
+        .promocao-sabado .btn-adicionar:hover {
+            background: #a80f15;
+            transform: translateY(-1px);
+        }
+
+        /* ==========================================
            RESPONSIVO - CELULAR
         ========================================== */
         @media (max-width: 600px) {
@@ -1495,175 +1524,36 @@
             </div>
         </div>
 
-        <!-- SÁBADO (data-dia="6") -->
-      <!-- DIV DA PROMOÇÃO DO SÁBADO (CHURROS GRÁTIS) -->
-<div class="card promocao" data-categoria="promocoes" data-nome="Promoção Churros Grátis" data-preco="0.00" data-dia="6">
-    <img src="https://images.unsplash.com/photo-1624371414361-e670edf4898d?w=500" alt="Churros Grátis">
-    <div class="card-conteudo">
-        <h3>Sábado do Churros Grátis! 🎉</h3>
-        <p class="descricao">Em compras a partir de R$ 50,00 você ganha 1 Churros delicioso totalmente grátis!</p>
-        <div class="preco">Grátis acima de R$ 50,00</div>
+        <!-- SÁBADO (data-dia="6") - MACARRÃO + COCA-COLA -->
+        <div class="card promocao promocao-sabado"
+             data-categoria="promocoes"
+             data-nome="Macarrão"
+             data-preco="39.99"
+             data-dia="6"
+             data-promocao-sabado="true">
 
-        <button class="btn-adicionar" onclick="ativarPromocaoChurros()">Garantir Churros Grátis 🎁</button>
-    </div>
+            <img src="macarrao.jpeg"
+                 alt="Promoção de sábado - Macarrão com Coca-Cola"
+                 onerror="this.src='imagens/sem-foto.jpg'">
 
-    <!-- MODAL / POP-UP DE ESCOLHA DO SABOR (DENTRO DA DIV DA PROMOÇÃO) -->
-    <div id="modalChurros" class="modal-churros-container" style="display: none;">
-        <div class="modal-churros-caixa">
-            <h3>🎉 Parabéns! Você ganhou um Churros!</h3>
-            <p>Seu pedido atingiu R$ 50,00. Escolha o sabor do seu brinde:</p>
-            
-            <div class="opcoes-sabor-churros">
-                <label><input type="radio" name="saborChurrosOpcao" value="Doce de Leite" checked> 🍯 Doce de Leite</label>
-                <label><input type="radio" name="saborChurrosOpcao" value="Chocolate"> 🍫 Chocolate</label>
-                
+            <div class="card-conteudo">
+                <span class="etiqueta">🔥 SÓ NO SÁBADO</span>
+
+                <h3>🍝 Macarrão + 🥤 Coca-Cola Lata</h3>
+
+                <p class="descricao">
+                    Monte seu macarrão escolhendo a massa, o molho e
+                    exatamente 4 ingredientes. A Coca-Cola lata já está inclusa!
+                </p>
+
+                <div class="preco">R$ 39,99</div>
+
+                <button class="btn-adicionar"
+                        onclick="abrirPersonalizacao(this)">
+                    🍝 Montar minha promoção
+                </button>
             </div>
-
-            <button type="button" class="btn-confirmar-churros" onclick="confirmarSaborChurros()">Adicionar Brinde ao Pedido 🎁</button>
         </div>
-    </div>
-
-    <!-- ESTILOS EXCLUSIVOS DO POPUP DO CHURROS -->
-    <style>
-        .modal-churros-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: rgba(0, 0, 0, 0.75);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 99999;
-        }
-
-        .modal-churros-caixa {
-            background: #ffffff;
-            padding: 25px;
-            border-radius: 12px;
-            max-width: 380px;
-            width: 90%;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
-            color: #333333;
-        }
-
-        .modal-churros-caixa h3 {
-            color: #e67e22;
-            margin-bottom: 8px;
-            font-size: 20px;
-        }
-
-        .modal-churros-caixa p {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 15px;
-        }
-
-        .opcoes-sabor-churros {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-bottom: 20px;
-            text-align: left;
-        }
-
-        .opcoes-sabor-churros label {
-            font-size: 15px;
-            cursor: pointer;
-            background: #f8f9fa;
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 500;
-        }
-
-        .btn-confirmar-churros {
-            background-color: #27ae60;
-            color: white;
-            border: none;
-            padding: 12px;
-            font-size: 15px;
-            font-weight: bold;
-            border-radius: 8px;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        .btn-confirmar-churros:hover {
-            background-color: #219150;
-        }
-    </style>
-
-    <!-- SCRIPT DE FUNCIONAMENTO INTEGRADO -->
-    <script>
-        let promocaoChurrosAtiva = false;
-
-        function ativarPromocaoChurros() {
-            promocaoChurrosAtiva = true;
-            alert("Promoção Ativada! Adicione seus lanches. Quando o carrinho atingir R$ 50,00, você poderá escolher o sabor do seu Churros Grátis! 🍫");
-
-            const secaoCardapio = document.querySelector('.produtos') || document.querySelector('#cardapio') || document.querySelector('.secao');
-            if (secaoCardapio) {
-                secaoCardapio.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-
-        // Esta função deve ser disparada ao atualizar o total do carrinho
-        function verificarBrindeChurros(valorTotalCarrinho) {
-            const VALOR_MINIMO = 50.00;
-
-            if (promocaoChurrosAtiva) {
-                if (valorTotalCarrinho >= VALOR_MINIMO) {
-                    if (!carrinhoTemChurros()) {
-                        document.getElementById('modalChurros').style.display = 'flex';
-                    }
-                } else {
-                    removerChurrosGratisDoCarrinho();
-                }
-            }
-        }
-
-        function confirmarSaborChurros() {
-            const saborSelecionado = document.querySelector('input[name="saborChurrosOpcao"]:checked').value;
-
-            const churrosBrinde = {
-                nome: `🎁 BRINDE: Churros (${saborSelecionado})`,
-                preco: 0.00
-            };
-
-            if (typeof carrinho !== 'undefined') {
-                carrinho.push(churrosBrinde);
-                if (typeof atualizarCarrinhoHTML === 'function') {
-                    atualizarCarrinhoHTML();
-                }
-            }
-
-            document.getElementById('modalChurros').style.display = 'none';
-            alert(`1x Churros de ${saborSelecionado} adicionado ao seu pedido sem custos! 🎉`);
-        }
-
-        function carrinhoTemChurros() {
-            if (typeof carrinho !== 'undefined') {
-                return carrinho.some(item => item.nome.includes("BRINDE: Churros"));
-            }
-            return false;
-        }
-
-        function removerChurrosGratisDoCarrinho() {
-            if (typeof carrinho !== 'undefined') {
-                carrinho = carrinho.filter(item => !item.nome.includes("BRINDE: Churros"));
-                if (typeof atualizarCarrinhoHTML === 'function') {
-                    atualizarCarrinhoHTML();
-                }
-            }
-        }
-    </script>
-</div>
 
         <!-- DOMINGO (data-dia="0") - PROMOÇÃO FAMÍLIA -->
         <div class="card promocao" data-categoria="promocoes" data-nome="Hot Kids" data-preco="7.99" data-dia="0">
@@ -2096,12 +1986,12 @@
             </div>
 
             <div class="produtos">
-                <div class="card" data-categoria="macarrao" data-nome="Macarrão" data-preco="35.00">
+                <div class="card" data-categoria="macarrao" data-nome="Macarrão" data-preco="39.99">
                     <img src="macarrao.jpeg" alt="Macarrão" onerror="this.src='imagens/sem-foto.jpg'">
                     <div class="card-conteudo">
                         <h3>Macarrão aproximadamente 1kg</h3>
                         <p class="descricao">Escolha massa, molho e 4 ingredientes.</p>
-                        <div class="preco">R$ 35,00</div>
+                        <div class="preco">R$ 39,99</div>
                         <button class="btn-adicionar" onclick="abrirPersonalizacao(this)">Personalizar</button>
                     </div>
                 </div>
@@ -2279,7 +2169,6 @@
                 <div class="grupo-opcao">
                     <h3>🍅 Escolha o molho</h3>
                     <div class="opcoes">
-                        <label class="opcao"><input type="radio" name="molho" value="Branco"> Branco</label>
                         <label class="opcao"><input type="radio" name="molho" value="Vermelho"> Vermelho</label>
                         <label class="opcao"><input type="radio" name="molho" value="Rosé"> Rosé</label>
                         <label class="opcao"><input type="radio" name="molho" value="Alho e óleo"> Alho e óleo</label>
@@ -2611,6 +2500,7 @@ function filtrarPromocoesDoDia() {
             return {
                 nome: card.dataset.nome || "",
                 preco: parseFloat(card.dataset.preco) || 0,
+                promocaoSabado: card.dataset.promocaoSabado === "true",
                 personalizacao: ""
             };
         }
@@ -2716,7 +2606,11 @@ function filtrarPromocoesDoDia() {
             }
 
             const titulo = document.getElementById("tituloModal");
-            if (titulo) titulo.textContent = "Personalizar " + nome;
+            if (titulo) {
+                titulo.textContent = produtoPersonalizando.promocaoSabado
+                    ? "🍝 Montar promoção de sábado"
+                    : "Personalizar " + nome;
+            }
 
             const fundo = document.getElementById("fundoModal");
             if (fundo) fundo.classList.add("aberto");
@@ -2774,11 +2668,13 @@ function filtrarPromocoesDoDia() {
             let precoAdicionais = 0;
             let listaAdicionais = [];
 
-            /* MACARRÃO */
+            /* MACARRÃO / PROMOÇÃO DE SÁBADO */
             if (produtoPersonalizando.nome === "Macarrão") {
                 const massa = pegarRadio("massa");
                 const molho = pegarRadio("molho");
-                const ingredientes = Array.from(document.querySelectorAll('input[name="ingrediente"]:checked')).map(function (item) {
+                const ingredientes = Array.from(
+                    document.querySelectorAll('input[name="ingrediente"]:checked')
+                ).map(function (item) {
                     return item.value;
                 });
 
@@ -2786,23 +2682,50 @@ function filtrarPromocoesDoDia() {
                     alert("Escolha a massa.");
                     return;
                 }
+
                 if (!molho) {
                     alert("Escolha o molho.");
                     return;
                 }
+
                 if (ingredientes.length !== 4) {
                     alert("Escolha exatamente 4 ingredientes.");
                     return;
                 }
 
-                personalizacao = "Massa: " + massa + " | Molho: " + molho + " | Ingredientes: " + ingredientes.join(", ");
+                if (produtoPersonalizando.promocaoSabado) {
+                    /*
+                     * Na promoção de sábado, o preço é fixo em R$ 39,99
+                     * e a Coca-Cola lata já está inclusa.
+                     * Os adicionais pagos do macarrão normal não entram
+                     * nesta promoção.
+                     */
+                    produtoPersonalizando.preco = 39.99;
 
-                const cbs = document.querySelectorAll('input[name="adicionalMacarrao"]:checked');
-                cbs.forEach(function(cb) {
-                    const v = parseFloat(cb.value) || 0;
-                    precoAdicionais += v;
-                    listaAdicionais.push(cb.getAttribute("data-nome") + " (+" + formatarMoeda(v) + ")");
-                });
+                    personalizacao =
+                        "🍝 Massa: " + massa +
+                        " | Molho: " + molho +
+                        " | Ingredientes: " + ingredientes.join(", ") +
+                        " | 🥤 Coca-Cola lata inclusa";
+                } else {
+                    personalizacao =
+                        "Massa: " + massa +
+                        " | Molho: " + molho +
+                        " | Ingredientes: " + ingredientes.join(", ");
+
+                    const cbs = document.querySelectorAll(
+                        'input[name="adicionalMacarrao"]:checked'
+                    );
+
+                    cbs.forEach(function(cb) {
+                        const v = parseFloat(cb.value) || 0;
+                        precoAdicionais += v;
+                        listaAdicionais.push(
+                            cb.getAttribute("data-nome") +
+                            " (+" + formatarMoeda(v) + ")"
+                        );
+                    });
+                }
             }
 
             /* BATATA RECHEADA */
