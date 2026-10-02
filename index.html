@@ -143,6 +143,111 @@
         }
 
         /* ==========================================
+           MACARRÃO 2 INGREDIENTES - PROMOÇÃO
+        ========================================== */
+        .ingredientes-container {
+            margin: 12px 0;
+            background: linear-gradient(180deg, #fffdfd 0%, #fff6f6 100%);
+            border: 1px solid #f0c8ca;
+            border-radius: 14px;
+            padding: 10px;
+            box-shadow: 0 3px 10px rgba(215, 25, 32, 0.08);
+        }
+
+        .ingredientes-container summary {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 9px 10px;
+            border-radius: 10px;
+            background: #fff;
+            color: #b9151b;
+            font-size: 14px;
+            font-weight: 800;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .ingredientes-container summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .ingredientes-container summary::after {
+            content: "⌄";
+            font-size: 18px;
+            line-height: 1;
+            transition: transform .2s ease;
+        }
+
+        .ingredientes-container[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        .contador-macarrao {
+            margin: 8px 2px 10px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 700;
+            color: #666;
+        }
+
+        .ingredientes-lista {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .ingredientes-lista label {
+            position: relative;
+            display: flex;
+            align-items: center;
+            min-height: 46px;
+            padding: 9px 10px;
+            border: 1px solid #e4e4e4;
+            border-radius: 10px;
+            background: #fff;
+            color: #333;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: .18s ease;
+        }
+
+        .ingredientes-lista label:hover {
+            border-color: #e1a5a8;
+            transform: translateY(-1px);
+        }
+
+        .ingredientes-lista label:has(input:checked) {
+            border-color: #d71920;
+            background: #fff0f1;
+            color: #a80f15;
+            box-shadow: 0 2px 8px rgba(215, 25, 32, 0.12);
+        }
+
+        .ingredientes-lista input[type="checkbox"] {
+            flex: 0 0 auto;
+            width: 18px;
+            height: 18px;
+            margin: 0 8px 0 0;
+            accent-color: #d71920;
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            .ingredientes-lista {
+                grid-template-columns: 1fr;
+            }
+
+            .ingredientes-lista label {
+                min-height: 44px;
+            }
+        }
+
+        /* ==========================================
            RESPONSIVO - CELULAR
         ========================================== */
         @media (max-width: 600px) {
@@ -1330,7 +1435,8 @@
 
         <!-- ESCOLHA DOS 2 INGREDIENTES INCLUSOS (MÁXIMO 2) -->
         <details class="ingredientes-container" open>
-            <summary>🍝 Escolha seus 2 Ingredientes (Inclusos)</summary>
+            <summary>🍝 Escolha 2 ingredientes inclusos</summary>
+            <div class="contador-macarrao" data-contador-macarrao>0 de 2 ingredientes selecionados</div>
             <div class="ingredientes-lista">
                 <label><input type="checkbox" name="ingredientes-macarrao" value="0.00" data-nome="Bacon" onchange="limitarIngredientes(this, 2)"> Bacon</label>
                 <label><input type="checkbox" name="ingredientes-macarrao" value="0.00" data-nome="Calabresa" onchange="limitarIngredientes(this, 2)"> Calabresa</label>
@@ -1340,10 +1446,7 @@
                 <label><input type="checkbox" name="ingredientes-macarrao" value="0.00" data-nome="Carne Moída" onchange="limitarIngredientes(this, 2)"> Carne Moída</label>
                 <label><input type="checkbox" name="ingredientes-macarrao" value="0.00" data-nome="Milho" onchange="limitarIngredientes(this, 2)"> Milho</label>
                 <label><input type="checkbox" name="ingredientes-macarrao" value="0.00" data-nome="Azeitona" onchange="limitarIngredientes(this, 2)"> Azeitona</label>
-                <label><input type="checkbox" name="ingredientes-macarrao" value="0.00" data-nome="Champignon" onchange="limitarIngredientes(this, 2)"> Champignon</label>
-                <label><input type="checkbox" name="ingredientes-macarrao" value="0.00" data-nome="Palmito" onchange="limitarIngredientes(this, 2)"> Palmito</label>
                 <label><input type="checkbox" name="ingredientes-macarrao" value="0.00" data-nome="Ervilha" onchange="limitarIngredientes(this, 2)"> Ervilha</label>
-                <label><input type="checkbox" name="ingredientes-macarrao" value="0.00" data-nome="Ovo de Codorna" onchange="limitarIngredientes(this, 2)"> Ovo de Codorna</label>
             </div>
         </details>
 
@@ -1725,7 +1828,7 @@
                 </div>
 
                 <div class="card" data-categoria="hotdog30cm" data-nome="Hot Dog 30 cm com cebola caramelizada" data-preco="39.99">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQilFPv9lyAZTIz9iT-pqwh8x3mRhK7WsQU3dZ5UgABoz1gHlRABY5E0VBi&s=10" alt="Hot Dog 30 cm com cebola caramelizada">
+                    <img src="caramelizada.jpg" alt="Hot Dog 30 cm com cebola caramelizada">
                     <div class="card-conteudo">
                         <h3>Hot Dog 30 cm com cebola caramelizada</h3>
                         <p class="descricao">Pão de 30 cm, salsicha, catupiry, Bacon, queijo, molhos, Cebola caramelizada e batata palha.</p>
@@ -1750,7 +1853,7 @@
                 </div>
 
                 <div class="card" data-categoria="hotdog30cm" data-nome="Hot Dog 30 cm sabor pizza" data-preco="34.99">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKOCHVM6MGpt-sIiQYlLdFG4jf_aLmnDhX_iX9Y2WEJ_Yx8gMBgLI2iXQ&s=10" alt="Hot Dog 30 cm sabor pizza">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQilFPv9lyAZTIz9iT-pqwh8x3mRhK7WsQU3dZ5UgABoz1gHlRABY5E0VBi&s=10" alt="Hot Dog 30 cm sabor pizza">
                     <div class="card-conteudo">
                         <h3>Hot Dog 30 cm sabor pizza</h3>
                         <p class="descricao">Pão de 30 cm, salsicha, Presunto, queijo, molhos, Orégano e batata palha.</p>
@@ -2368,21 +2471,25 @@
     <script>
         // Função genérica que serve para 2, 4 ou qualquer quantidade de ingredientes
 function limitarIngredientesMacarrao(checkbox, limite) {
-    // Procura o grupo de ingredientes dentro do mesmo card/seção onde o usuário clicou
-    const grupoOpcao = checkbox.closest('.grupo-opcao');
-    const selecionados = grupoOpcao.querySelectorAll('input[type="checkbox"]:checked');
+    const grupo = checkbox.closest('.ingredientes-container');
+    if (!grupo) return;
+
+    const selecionados = grupo.querySelectorAll('input[name="ingredientes-macarrao"]:checked');
 
     if (selecionados.length > limite) {
-        alert(`Você pode escolher no máximo ${limite} ingredientes para este prato!`);
-        checkbox.checked = false; // Desmarca o ingrediente excedente
+        checkbox.checked = false;
+        alert(`Você pode escolher somente ${limite} ingredientes inclusos.`);
     }
 
-    // Opcional: Atualizar contador se houver um elemento com id ou classe de contador
-    const contador = grupoOpcao.querySelector('.contador-ingredientes');
+    const contador = grupo.querySelector('[data-contador-macarrao]');
     if (contador) {
-        const totalMarcados = grupoOpcao.querySelectorAll('input[type="checkbox"]:checked').length;
-        contador.textContent = `${totalMarcados} de ${limite} ingredientes selecionados`;
+        const total = grupo.querySelectorAll('input[name="ingredientes-macarrao"]:checked').length;
+        contador.textContent = `${total} de ${limite} ingredientes selecionados`;
     }
+}
+
+function limitarIngredientes(checkbox, limite) {
+    limitarIngredientesMacarrao(checkbox, limite);
 }
 
         document.addEventListener("DOMContentLoaded", function () {
@@ -2531,8 +2638,26 @@ function filtrarPromocoesDoDia() {
             });
 
             let personalizacao = "";
+
+            /* PROMOÇÃO: MACARRÃO 2 INGREDIENTES */
+            if (nomeBase === "Macarrão 2 Ingredientes") {
+                const ingredientes = Array.from(
+                    card.querySelectorAll('input[name="ingredientes-macarrao"]:checked')
+                ).map(function (cb) {
+                    return cb.getAttribute("data-nome") || "";
+                }).filter(Boolean);
+
+                if (ingredientes.length !== 2) {
+                    alert("Escolha exatamente 2 ingredientes inclusos.");
+                    return;
+                }
+
+                personalizacao = "Ingredientes inclusos: " + ingredientes.join(", ");
+            }
+
             if (adicionaisSelecionados.length > 0) {
-                personalizacao = "Adicionais: " + adicionaisSelecionados.join(", ");
+                if (personalizacao) personalizacao += " | ";
+                personalizacao += "Adicionais: " + adicionaisSelecionados.join(", ");
             }
 
             carrinho.push({
@@ -2545,6 +2670,15 @@ function filtrarPromocoesDoDia() {
             checkboxes.forEach(function (cb) {
                 cb.checked = false;
             });
+
+            const ingredientesMacarrao = card.querySelectorAll('input[name="ingredientes-macarrao"]:checked');
+            ingredientesMacarrao.forEach(function (cb) {
+                cb.checked = false;
+            });
+            const contadorMacarrao = card.querySelector('[data-contador-macarrao]');
+            if (contadorMacarrao) {
+                contadorMacarrao.textContent = "0 de 2 ingredientes selecionados";
+            }
 
             atualizarCarrinho();
         }
